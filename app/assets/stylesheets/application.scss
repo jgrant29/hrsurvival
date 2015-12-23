@@ -8,17 +8,26 @@ html {
 }
 
 .navbar-default {
-  background-color: #fff;
+  background-color: #ECF0F1;
+
+  }
+
+.navbar-default .navbar-nav > li > a {
+  color: #2C3E50;
+}
+
+.navbar-default .navbar-brand {
+    color: #2C3E50;
 }
 
 body {
   color: white;
   min-height: 100%;
-
 }
 
+
 body.landing {
-  background-color: #fff;
+  background-color: #ECF0F1;
 }
 
 h1 {
@@ -26,7 +35,7 @@ h1 {
 }
 
 h2, h3, h4, h5 {
-  color: #DB4105
+  color: #FFFF9D
 }
 
 p {

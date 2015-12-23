@@ -1,17 +1,35 @@
 <section class="hero-content">
-  <h1 class="hero-title"></h1>
+  <h1 class="hero-title">Virginia </h1>
 </section>
 
-<section>
+<section class="row">
+  <div class="col-md-4 text-center">
+    <span class="glyphicon glyphicon-user"></span>
+    <h5 class="point-title">Top Attorney Insights</h5>
+    <p class="point-description">Local attorneys help you understand what to do, how to do it, and a little bit of the why</p>
+  </div>
+  <div class="col-md-4 text-center">
+    <span class="glyphicon glyphicon-time"></span>
+    <h5 class="point-title">Reliable Answers Fast</h5>
+    <p class="point-description">Our resources address areas from hiring to termination and everything in between</p>
+  </div>
+  <div class="col-md-4 text-center">
+    <span class="glyphicon glyphicon-book"></span>
+    <h5 class="point-title">Plain English Guides</h5>
+    <p class="point-description">No legalese or footnotes — you'll know how to comply with state and federal laws</p>
+  </div>
 </section>
 
 <script>
 $( document ).ready(function() {
   $(function(){
       $(".hero-title").typed({
-        strings: ["Survive ^1000 the elements", "Survive ^1000 your employees", "Survive ^1000 employment laws"],
-        typeSpeed: 45,
-         loop: true
+        strings: ["Employment Law", "Policies & Forms", "Safety & Health", "Minimum Wage", "Recruiting & Termination", "Background Checks"],
+        typeSpeed: 115,
+        backSpeed: 45,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
       });
   });
 });
