@@ -17,7 +17,7 @@
      transform: translateY(-50%);
      width: 100%;                    /* makes sure the title inhabits the full width of its container */
      text-align: center;             /* aligns text in the horizontal center of the element */
-     font-size: 4rem;                /* specifies the size of the font in root em units */
+     font-size: 2rem;                /* specifies the size of the font in root em units */
      font-weight: 300;               /* makes the font thinner or lighter weight */
      letter-spacing: 0.5rem;         /* puts 0.5 root ems worth of space between each letter */
      text-shadow: 1px 1px 0px #2980B9; /* creates a shadow underneath the text for readability over the image */
@@ -26,6 +26,7 @@
   .hero-content .hero-title {
     font-size: 1.5rem;
   }
+
   .hero-content {
     padding-top: 25px;
     min-height: 275px;

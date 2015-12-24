@@ -12,6 +12,7 @@ end
 gem "pg"
 gem 'bootstrap-sass'
 gem "typedjs-rails", "~> 1.0.2"
+gem 'devise'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
