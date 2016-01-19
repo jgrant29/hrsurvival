@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Books</h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <% @books.each do |book| %>
+    <div class="media">
+      <div class="media-body">
+        <div class="media-heading">
+        <h4>
+          <%= link_to book.title, book %>
+        </h4>
+        <small>
+          <%= book.body %>
+        </small>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <% if policy(Book.new).create? %>
+      <%= link_to "New Book", new_book_path, class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   
+  resources :books do
+    resources :chapters, except: [:index] do
+      resources :tableofcontents, except: [:index]
+    end
+  end
+
+  resources :chapters do
+    resources :tableofcontents, except: [:index] 
+  end
+
   devise_for :users
   get 'welocome/index'
 

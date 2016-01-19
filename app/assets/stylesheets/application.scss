@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "welocome";
+@import "chapters";
 
 html {
   height: 100%;
@@ -21,23 +22,9 @@ html {
 }
 
 body {
-  color: white;
-  min-height: 100%;
+  padding-top: 70px;
 }
-
 
 body.landing {
-  background-color: #ECF0F1;
-}
-
-h1 {
- color: #9FB4CC
-}
-
-h2, h3, h4, h5 {
-  color: #FFFF9D
-}
-
-p {
-  color: #33332D
+  background-color: #fff;
 }

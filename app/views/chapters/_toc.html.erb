@@ -1,0 +1,5 @@
+<% @book.chapters.each do |chapter| %>
+      <h5 class="media-heading"></br>
+        <%= link_to chapter.title, [@book, chapter] %>
+      </h5>
+    <% end %>

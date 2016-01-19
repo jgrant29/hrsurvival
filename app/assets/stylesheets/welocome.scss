@@ -1,9 +1,19 @@
+html {
+  width: 100%;
+}
+
 .hero-content {
   position: relative;
   min-height: 400px;
   background-color: #2C3E50;
   border-bottom: 4px solid #E74C3C;
+  margin-top: -70px;
+}
 
+.hero-content-two {
+  background-color: #2980B9;
+  border-top: 4px solid #2C3E50;
+  padding-top: 30px;
 }
 
 
@@ -70,4 +80,25 @@
   padding-top: 40px;
 }
 
+.hero-content .typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
  
