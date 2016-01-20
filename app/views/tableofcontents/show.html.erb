@@ -34,7 +34,7 @@
           <div>
             <%= simple_format @chapter.body, id: "toc-container" %>
             <h3><%= @tableofcontent.title %></h3><br>
-            <%= @tableofcontent.body %>
+            <p><%= markdown_to_html @tableofcontent.body %></p>
           </div>
       </div>
     </div>

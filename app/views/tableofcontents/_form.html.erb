@@ -19,14 +19,14 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
-  <div class="field">
-    <%= f.label :body %><br>
-    <script src="js/epiceditor.js"></script>
-    <div id="epiceditor">
-      <%= f.text_area :body %>
+    <div class="field">
+      <%= f.label :body %>
+      <script src="js/epiceditor.js"></script>
+      <div id="epiceditor">
+        <%= f.text_area :body %>
+      </div>
+      <script>var editor = new EpicEditor().load();</script>
     </div>
-    <script>var editor = new EpicEditor().load();</script>
-  </div></br>
   <div class="field">
     <%= f.label :public %><br>
     <%= f.check_box :public %>
