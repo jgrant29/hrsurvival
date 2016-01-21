@@ -16,5 +16,4 @@
 //= require bootstrap
 //= require typed
 //= require_tree .
-//= require epiceditor
 //= require tinymce
