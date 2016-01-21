@@ -16,4 +16,4 @@
 //= require bootstrap
 //= require typed
 //= require_tree .
-//= require tinymce
+//= require ckeditor/init

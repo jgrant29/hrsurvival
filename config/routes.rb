@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  mount Ckeditor::Engine => '/ckeditor'
   resources :books do
     resources :chapters, except: [:index] do
       resources :tableofcontents, except: [:index]

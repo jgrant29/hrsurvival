@@ -19,10 +19,9 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
-    <div class="field">
+    <div class="field" data-no-turbolink>
       <%= f.label :body %>
-      <%= f.text_area :body, class: "tinymce", rows: 20 %>
-      <%= tinymce %>
+      <%= f.cktext_area :body, :ckeditor => {:toolbar => 'Full'} %>
     </div>
   <div class="field">
     <%= f.label :public %><br>

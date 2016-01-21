@@ -79,5 +79,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'arcane-depths-4071.herokuapp.com' }
-  config.tinymce.install = :compile
+  config.assets.precompile += ['ckeditor/*']
+  
 end

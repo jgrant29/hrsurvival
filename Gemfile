@@ -17,8 +17,10 @@ gem 'faker'
 gem 'pundit'
 gem 'figaro', '1.0'
 gem 'epic-editor-rails'
-gem 'tinymce-rails'
 gem 'redcarpet'
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

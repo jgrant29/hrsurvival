@@ -1,0 +1,153 @@
+/* Override ckeditor styles */
+.rteindent1,
+.rteindent2,
+.rteindent3,
+.rteindent4 {margin-left: 0;}
+
+/* level 1 */
+/* 1 sub */ h2.one {font-size: 1.71em; line-height: normal;}
+/* 1 text */ p.one {}
+/* Quote 1 */ p.quote {width: 75%; margin: 0 auto;}
+
+/* level 2 */
+/* 2 sub */ h3.two {font-size: 1.14em; border-bottom: 1px solid #dcdcdc; line-height: normal; font-family: "Roboto";}
+/* 2 text */ p.two {}
+
+/* level 3 */
+/* 3 sub */ h4.three {font-size: 1.5em; font-weight: normal; line-height: normal; border-bottom: 1px solid #666; padding: 5px 0; }
+/* 3 text */ p.three {}
+
+/* level 4 */
+.four,
+p.rteindent3 {margin-left: 60px;}
+/* 4 sub */ h5.four {font-size: 1.5em; font-weight: normal; line-height: normal;}
+/* 4 text */ p.four {}
+
+/* level 5 */
+.five,
+p.rteindent4 {margin-left: 80px;}
+/* 5 sub */ h6.five {}
+/* 5 text */ p.five {}
+
+/* level 6 */
+.six,
+p.rteindent5 {margin-left: 100px;}
+/* 6 text */ p.six {}
+
+/* policy */ p.policy {text-align: center; padding: 5px 10px; background-color: #eee; border-bottom: 1px solid #666; margin-top: 1em; font-size: 1.3em;line-height: normal;}
+
+/* sample */
+/* sample title */ h2.sample-title, p.sample-title {text-transform: uppercase; font-weight: bold; text-align: center; font-size: 1.3em; line-height: normal;}
+/* sample text */ p.sample-text {}
+
+/* forms heading */ h2.forms-heading, p.forms-heading {padding: 5px 10px; border: 3px double #333; font-variant: small-caps; text-align: center;font-size: 1em; font-weight: normal;}
+
+/* bullets */
+ul, ol {list-style-position: outside; padding-left:20px;}
+
+ul {}
+ul li {list-style-type: disc;}
+
+ul ul,
+ul.rteindent2 {padding-left: 40px;}
+ul ul li {list-style-type: square;}
+
+ul ul ul,
+ul.rteindent3 {padding-left: 60px;}
+ul ul ul li {list-style-type: circle;}
+
+
+/* special bullets */
+ul.square li,
+ul.check li,
+ul.x li,
+ul.circle,
+ul li.square,
+ul li.check,
+ul li.x,
+ul li.circle {list-style-type: none;}
+
+ul.square li:before,
+ul.check li:before,
+ul.x li:before,
+ul.circle li:before,
+ul li.square:before,
+ul li.check:before,
+ul li.x:before,
+ul li.circle:before {
+  display: inline-block;
+  width: 1.5em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+ul.square li,
+ul.square li:before,
+ul li.square,
+ul li.square:before {
+  content: "\274F"; /* ❏ */
+  background-image: expression(this.runtimeStyle.backgroundImage="none",this.innerHTML = '&#10063;'+this.innerHTML);
+}
+ul.check li,
+ul.check li:before,
+ul li.check,
+ul li.check:before {
+  content: "\2713"; /* ✓ */
+  background-image: expression(this.runtimeStyle.backgroundImage="none",this.innerHTML = '&#10003;'+this.innerHTML);
+}
+ul.x li,
+ul.x li:before,
+ul li.x,
+ul li.x:before {
+  content: "\2717"; /* ✘ */
+  background-image: expression(this.runtimeStyle.backgroundImage="none",this.innerHTML = '&#10007;'+this.innerHTML);
+}
+ul.circle li,
+ul.circle li:before,
+ul li.circle,
+ul li.circle:before {
+  content: "\274D"; /* ❍ */
+  background-image: expression(this.runtimeStyle.backgroundImage="none",this.innerHTML = '&#10061;'+this.innerHTML);
+}
+
+/* lists */
+#content-inner li,
+.view-content li {margin: 1em 0;}
+#content-inner .toc-list li {margin:0;}
+li.bold {font-weight: bold;}
+  li.bold li {font-weight: normal; color: black !important}
+
+/* tables */
+table td,
+table th {padding: 5px;}
+table.all td,
+table.all th {border: 1px solid #333;}
+table.row tr {border-top: 1px solid #333;}
+  table.row {border-bottom: 1px solid #333;}
+table.column td,
+table.column th {border-left: 1px solid #333;}
+  table.column {border-right: 1px solid #333;}
+#content-inner table td p,
+.view-content table td p,
+#content-inner table th p,
+.view-content table th p {margin-bottom: 0;}
+
+/* global */
+#content-inner p,
+.view-content p  {margin-top: 0; margin-bottom: 1em;}
+#content-inner ul,
+.view-content ul {margin-top: 0; margin-bottom: 0;}
+#content-inner p.noafter,
+.view-content p.noafter,
+#content-inner li.noafter,
+.view-content li.noafter {margin-bottom:0;}
+#content-inner li.no-bullet,
+.view-content li.no-bullet {list-style-type: none !important; list-style-image: none !important; margin-top:0;}
+#content-inner li.no-bullet:before,
+.view-content li.no-bullet:before {content: "" !important;}
+#content-inner p.note,
+.view-content p.note {margin-bottom:0; font-weight: bold;}
+
+pre {word-wrap: break-word;white-space: pre-wrap;}
+
+.simple {color: #ED3D13;}
