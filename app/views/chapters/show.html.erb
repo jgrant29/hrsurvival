@@ -1,6 +1,7 @@
 
 <div class="row">
   <div class="col-md-3 ">
+    <h3><%= @book.title %></h3>
     <% @book.chapters.each do |chapter| %>
       <h5><%= link_to chapter.title, [@book, chapter] %></h5>
                   <% end %>
