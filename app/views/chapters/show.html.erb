@@ -1,14 +1,14 @@
 
 <div class="row">
-  <div class="col-md-3 ">
+  <div class="col-md-3 border-col">
     <h3><%= @book.title %></h3>
     <% @book.chapters.each do |chapter| %>
       <h5><%= link_to chapter.title, [@book, chapter] %></h5>
-                  <% end %>
+    <% end %>
     
       </div>
 
-  <div class="col-md-9">
+  <div class="col-md-9 chapter-col">
     <div class="media">
       <div class="media-body">          
         <h1><%= @chapter.title %></h1>
