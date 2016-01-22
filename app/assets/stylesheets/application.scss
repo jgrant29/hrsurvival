@@ -36,3 +36,15 @@ body {
 body.landing {
   background-color: #fff;
 }
+
+a {
+  color: #2C3E50;
+
+  &:hover {
+    color: #E74C3C;
+  }
+}
+
+active {
+  color: #E74C3C;
+  }
