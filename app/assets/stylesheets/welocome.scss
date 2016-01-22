@@ -5,9 +5,8 @@ html {
 .hero-content {
   position: relative;
   min-height: 400px;
-  background-color: #2C3E50;
+  background-color: #fff;
   border-bottom: 4px solid #E74C3C;
-  margin-top: -70px;
 }
 
 .hero-content-two {
@@ -18,7 +17,7 @@ html {
 
 
 .hero-content .hero-title {
-     color: #ECF0F1;
+     color: #2C3E50;
      position: absolute;             /* positioning will be explained in a resource */
      top: 40%;                       /* positioning will be explained in a resource */
      -webkit-transform: translateY(-50%);
@@ -81,6 +80,7 @@ html {
 }
 
 .hero-content .typed-cursor{
+    position: absolute;
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;

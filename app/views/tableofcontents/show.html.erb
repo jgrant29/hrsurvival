@@ -33,10 +33,10 @@
             <h3><%= @tableofcontent.title %></h3>
             <% if policy(@chapter).update? %>
             <%= link_to "Edit TOC", edit_book_chapter_tableofcontent_path(@book, @chapter, @tableofcontent), class: 'btn btn-primary' %>
-            
+            <%= link_to "Delete TOC", [@book, @chapter, @tableofcontent], method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure you want to delete this TOC?" } %>            
           <% end %>
-          <%= link_to "Delete TOC", [@book, @chapter, @tableofcontent], method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure you want to delete this TOC?" } %>
-            <p><%= markdown_to_html @tableofcontent.body %></p>
+             <p><%= markdown_to_html @tableofcontent.body %></p>
+
           </div>
       </div>
     </div>
