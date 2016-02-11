@@ -6,7 +6,7 @@ group :production do
 end
 
 group :develpment do 
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.11'
 end
 
 
