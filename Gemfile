@@ -1,15 +1,10 @@
 source 'https://rubygems.org'
 
 group :production do
-  gem "pg"
   gem 'rails_12factor'
 end
 
-group :develpment do 
-  gem 'sqlite3', '1.3.11'
-end
-
-
+gem "pg"
 gem 'searchkick'
 gem 'bootstrap-sass'
 gem "typedjs-rails", "~> 1.0.2"
