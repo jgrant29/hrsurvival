@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 group :production do
+  gem "pg"
   gem 'rails_12factor'
 end
 
@@ -9,7 +10,6 @@ group :develpment do
 end
 
 
-gem "pg"
 gem 'searchkick'
 gem 'bootstrap-sass'
 gem "typedjs-rails", "~> 1.0.2"
