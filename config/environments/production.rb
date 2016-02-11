@@ -80,6 +80,5 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'arcane-depths-4071.herokuapp.com' }
   config.assets.precompile += ['ckeditor/*']
-  Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_URL']
   
 end

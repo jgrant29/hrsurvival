@@ -76,17 +76,12 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    elasticsearch (1.0.14)
-      elasticsearch-api (= 1.0.14)
-      elasticsearch-transport (= 1.0.14)
-    elasticsearch-api (1.0.14)
+    elasticsearch (1.0.15)
+      elasticsearch-api (= 1.0.15)
+      elasticsearch-transport (= 1.0.15)
+    elasticsearch-api (1.0.15)
       multi_json
-    elasticsearch-model (0.1.8)
-      activesupport (> 3)
-      elasticsearch (> 0.4)
-      hashie
-    elasticsearch-rails (0.1.8)
-    elasticsearch-transport (1.0.14)
+    elasticsearch-transport (1.0.15)
       faraday
       multi_json
     epic-editor-rails (0.2.4)
@@ -177,7 +172,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    searchkick (1.0.2)
+    searchkick (1.2.0)
       activemodel
       elasticsearch (>= 1)
       hashie
@@ -219,8 +214,6 @@ DEPENDENCIES
   ckeditor
   coffee-rails (~> 4.1.0)
   devise
-  elasticsearch-model
-  elasticsearch-rails
   epic-editor-rails
   faker
   figaro (= 1.0)
