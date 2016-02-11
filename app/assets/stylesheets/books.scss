@@ -1,3 +1,23 @@
-// Place all the styles related to the books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.book-page-header {
+  height: 12rem;
+  background-color: #008385;
+  background-image: image-url("giraffe.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}
+
+
+.book-page-title {
+  padding-top: 1.5rem;
+  border-size: border-box;
+  color: #fff;
+  
+}
+
+.book-page-toc {
+  padding-top: -0.5rem;
+  border-size: border-box;
+  color: #000;
+}

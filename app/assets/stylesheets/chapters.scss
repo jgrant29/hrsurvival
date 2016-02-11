@@ -4,10 +4,39 @@
     border-radius: 10px;
 }
 
+.panel-group{
+
+}
+
+.col-md-3 {}
 .panel-group {
   margin-bottom: 0px;
+  color: #fff;
 }
 
 .panel-default {
   border: 0px;
+  color: #fff;
+}
+
+.chapter-page-header {
+  height: 15rem;
+  background-color: #008385;
+  background-image: image-url("giraffe.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  margin-top: 20px;
+}
+
+.chapter-page-title {
+  padding-top: 1rem;
+  border-size: border-box;
+  color: #fff;
+}
+
+.chapter-page-toc {
+  padding-top: -0.5rem;
+  border-size: border-box;
+  color: #ffffef;
 }

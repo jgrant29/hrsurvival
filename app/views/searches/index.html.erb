@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Search Results</h1>
+  <p><%= @tableofcontent_searches.total_count %> search results found in about <%= @tableofcontent_searches.took %> milliseconds
+    <% @tableofcontent_searches.with_details.each do |tableofcontent_search, details| %>
+      <% if tableofcontent_search.class == Tableofcontent %>
+    <h3><%= link_to tableofcontent_search.title, [tableofcontent_search.chapter.book, tableofcontent_search.chapter, tableofcontent_search], class: "search-title" %></h3>
+    <p><%= simple_format details[:highlight][:body] %></p>
+    <% end %>
+<% end %>
+</div>

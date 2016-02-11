@@ -12,7 +12,7 @@ class TableofcontentsController < ApplicationController
   def show
     @book = Book.find(params[:book_id])
     @chapter = Chapter.find(params[:chapter_id])
-    @tableofcontents = Tableofcontent.find(params[:id])
+    @tableofcontent = Tableofcontent.find(params[:id])
 
   end
 

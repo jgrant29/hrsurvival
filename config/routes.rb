@@ -1,14 +1,25 @@
 Rails.application.routes.draw do
   
   mount Ckeditor::Engine => '/ckeditor'
+
   resources :books do
-    resources :chapters, except: [:index] do
-      resources :tableofcontents, except: [:index]
+    resources :chapters, except: [:index]  do
+      resources :tableofcontents, except: [:index] do
+         collection do 
+          get :autocomplete
+        end
+      end
     end
   end
 
   resources :chapters do
     resources :tableofcontents, except: [:index] 
+  end
+
+  resources :searches, only: :index do
+    collection do 
+      get :autocomplete
+    end
   end
 
   devise_for :users

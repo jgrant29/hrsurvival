@@ -5,11 +5,12 @@ group :production do
 end
 
 group :develpment do 
-  gem 'quiet_assets'
+  gem 'sqlite3'
 end
 
 
 gem "pg"
+gem 'searchkick'
 gem 'bootstrap-sass'
 gem "typedjs-rails", "~> 1.0.2"
 gem 'devise'
@@ -21,6 +22,10 @@ gem 'redcarpet'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'jquery-ui-rails'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

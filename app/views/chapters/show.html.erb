@@ -1,17 +1,21 @@
 
+  <div class="chapter-page-header container-fluid">
+    <h1 class="chapter-page-title text-center"><%= @book.title %></h1>
+    <h3 class="chapter-page-toc text-center"><%= @chapter.title %></h3>
+  </div>
+
+<section class="container">
 <div class="row">
   <div class="col-md-3 border-col">
-    <h3><%= @book.title %></h3>
+   
     <% @book.chapters.each do |chapter| %>
-      <h5><%= link_to chapter.title, [@book, chapter] %></h5>
+      <h3><%= link_to chapter.title, [@book, chapter] %></h3>
     <% end %>
-    
-      </div>
-
+  </div>
+<section class="container">
   <div class="col-md-9 chapter-col">
     <div class="media">
       <div class="media-body">          
-        <h1><%= @chapter.title %></h1>
           <% if policy(@chapter).update? %>
             <%= link_to "Edit Chapter", edit_book_chapter_path, class: 'btn btn-primary' %>
             <%= link_to "New TOC", new_book_chapter_tableofcontent_path(@book, @chapter, @tableofcontent), class: 'btn btn-success' %>
@@ -40,3 +44,14 @@
       <% end %>
     </div>
 </div>
+</section>
+</section>
+  <div class="navbar navbar-default footer">
+    <div class="container-fluid">
+      <div class="col-md-6">
+        <p>2014-2016 hrsuvival.  All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-right">
+          <p>855-477-4675</p>
+      </div>
+    </div>
