@@ -13,7 +13,7 @@ body.landing {
   margin-top: -30px;
   background-image: image-url("cat-giraffe-copy.png");
   background-repeat: no-repeat;
-  background-color: #fff;
+  background-color: #008385;
   background-position: center center;
   background-size: cover; 
 }
@@ -45,17 +45,19 @@ body.landing {
      text-align: center;         
      font-size: 1rem; 
      height: 3rem;            
-     font-weight: 500;            
+     font-weight: 500;   
+      border: 1px solid #fff;         
      letter-spacing: 0.2rem;        
      &:hover {
       color: #fff;
-      box-shadow: inset 0px 0px 10px #000000;
+      border: 1px solid #fff;
+      box-shadow: 0px 0px 10px #fff;
       text-decoration: none;
      };
  }
 
  .hero-front {
-     color: #000;
+     color: #fff;
      position: absolute;             /* positioning will be explained in a resource */
      top: 25%;                       /* positioning will be explained in a resource */
      width: 100%;                    /* makes sure the title inhabits the full width of its container */
