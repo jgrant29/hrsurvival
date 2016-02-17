@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216212405) do
+ActiveRecord::Schema.define(version: 20160217213142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,19 @@ ActiveRecord::Schema.define(version: 20160216212405) do
     t.text     "body"
     t.string   "author"
     t.string   "chamber"
-    t.boolean  "public",     default: true
+    t.boolean  "public",      default: true
     t.boolean  "published"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "image"
     t.string   "avatar"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "youtube"
+    t.string   "tumblr"
+    t.string   "linkedin"
+    t.string   "websiteurl"
+    t.string   "websitename"
   end
 
   create_table "chapters", force: :cascade do |t|

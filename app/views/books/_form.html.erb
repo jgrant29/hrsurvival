@@ -18,7 +18,12 @@
       <%= b.label :body %>
       <%= b.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter Body description" %>
     </div>
-    <%= image_tag( @book.avatar.tiny.url ) %>
+    <% if @book.avatar? %>
+      <div class="form-group">
+        <p>Current avatar</p>
+        <%= image_tag( @book.avatar.url ) %>
+      </div>
+    <% end %>
     <div class="form-group">
       <%= b.label :avatar %>
       <%= b.file_field :avatar %>
@@ -26,9 +31,36 @@
     </div>
     <div class="field-group">
       <%= b.label :author %>
-      <%= b.text_field :author, class: 'form-control', placeholder: "Enter author name" %>
-   </div>
-
+      <%= b.text_field :author, class: 'form-control', placeholder: "Enter author's name" %>
+   </div><br>
+    <div class="form-group">
+      <%= b.label :websiteurl %>
+      <%= b.text_field :websiteurl, class: 'form-control', placeholder: "Enter author's website URL" %>
+    </div><br>
+    <div class="form-group">
+      <%= b.label :websitename %>
+      <%= b.text_field :websitename, class: 'form-control', placeholder: "Enter Law Firm" %>
+    </div><br>
+    <div class="form-group">
+      <%= b.label :facebook %>
+      <%= b.text_field :facebook, class: 'form-control', placeholder: "Enter author's Facebook if applicable" %>
+    </div><br>
+    <div class="form-group">
+      <%= b.label :twitter %>
+      <%= b.text_field :twitter, class: 'form-control', placeholder: "Enter author's Twitter if applicable" %>
+    </div><br>
+    <div class="form-group">
+      <%= b.label :youtube %>
+      <%= b.text_field :youtube, class: 'form-control', placeholder: "Enter author's Youtube if applicable" %>
+    </div><br>
+    <div class="form-group">
+      <%= b.label :tumblr %>
+      <%= b.text_field :tumblr, class: 'form-control', placeholder: "Enter author's Tumblr if applicable.  Else, enter hrsimple Tumblr" %>
+    </div><br>
+    <div class="form-group">
+      <%= b.label :linkedin %>
+      <%= b.text_field :linkedin, class: 'form-control', placeholder: "Enter author's Linkedin if applicable."%>
+    </div><br>
       <div class="field-group">
       <%= b.label :chamber %>
       <%= b.text_field :chamber, class: 'form-control', placeholder: "Enter Chamber name" %>

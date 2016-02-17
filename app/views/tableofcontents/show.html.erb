@@ -3,10 +3,37 @@
   <div class="row">
     <div class="col-md-3">
     <div class="author-avatar text-center">
+      <%= image_tag(@book.avatar.url) %>
       <h6 class="book-title text-center"><%= @book.title %></h6>
-      <%= image_tag(@book.avatar.tiny.url) %>
-      <p class="written-by">authored by</p>
-      <p class="author-name"><%= @book.author %></p>
+      <div class="written-by">authored by</div>
+      <div class="author-name"><%= link_to @book.author, @book.websiteurl %></div>
+      <% if @book.facebook? %>
+        <%= link_to @book.facebook do %>
+          <%= fa_icon "facebook-official 2x"%>
+        <% end %>
+      <% end %>
+
+      <% if @book.twitter? %>
+        <%= link_to @book.twitter do %>
+          <%= fa_icon "twitter 2x"%>
+        <% end %>
+      <% end %>
+
+      <% if @book.youtube? %>
+        <%= link_to @book.youtube do %>
+          <%= fa_icon "youtube-square 2x"%>
+        <% end %>
+      <% end %>
+      <% if @book.tumblr? %>
+        <%= link_to @book.tumblr do %>
+          <%= fa_icon "tumblr-square 2x"%>
+        <% end %>
+      <% end %>
+      <% if @book.linkedin? %>
+        <%= link_to @book.linkedin do %>
+          <%= fa_icon "linkedin-square 2x"%>
+        <% end %>
+      <% end %>
     </div>
     <div class="col-md-3-mobile">
     <% @book.chapters.each do |chapter| %>
@@ -33,16 +60,16 @@
   </div>
     <div class="col-md-9">
 <!--       <div class="chapter-page-header">
- -->        <h1 class="toc-title text-center"><%= @tableofcontent.title %></h1>
+ -->        <h1 class="toc-title"><%= @tableofcontent.title %></h1>
 <!--       </div>
  -->    <div class="media">
-      <div class="media-body">        
+      <div class="media-body toc-body">        
           <div>
             <% if policy(@chapter).update? %>
             <%= link_to "Edit TOC", edit_book_chapter_tableofcontent_path(@book, @chapter, @tableofcontent), class: 'btn btn-primary' %>
             <%= link_to "Delete TOC", [@book, @chapter, @tableofcontent], method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure you want to delete this TOC?" } %>            
           <% end %>
-             <p><%= simple_format @tableofcontent.body, class: 'toc-body' %></p>
+             <div><%= simple_format @tableofcontent.body %></div>
           </div>
       </div>
     </div>
