@@ -1,4 +1,5 @@
-<%= form_for [@book, @chapter, @tableofcontent] do |f| %>
+<div class="container">
+  <%= form_for [@book, @chapter, @tableofcontent] do |f| %>
   <% if @tableofcontent.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tableofcontent.errors.count, "error") %> prohibited this tableofcontent from being saved:</h2>
@@ -35,3 +36,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>

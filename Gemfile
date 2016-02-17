@@ -20,6 +20,7 @@ gem 'mini_magick'
 gem 'jquery-ui-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'fog'
 
 
 

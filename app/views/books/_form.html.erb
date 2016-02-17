@@ -1,4 +1,5 @@
-<div class="row">
+<div class="container">
+  <div class="row">
   <div class="col-md-4">
     <p>Guidelines for books:</p>
     <ul>
@@ -17,10 +18,17 @@
       <%= b.label :body %>
       <%= b.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter Body description" %>
     </div>
+    <%= image_tag( @book.avatar.tiny.url ) %>
+    <div class="form-group">
+      <%= b.label :avatar %>
+      <%= b.file_field :avatar %>
+      <%= b.hidden_field :avatar_cache %>
+    </div>
     <div class="field-group">
       <%= b.label :author %>
       <%= b.text_field :author, class: 'form-control', placeholder: "Enter author name" %>
    </div>
+
       <div class="field-group">
       <%= b.label :chamber %>
       <%= b.text_field :chamber, class: 'form-control', placeholder: "Enter Chamber name" %>
@@ -39,6 +47,7 @@
       <% end %>
     </div>
   </div>
+</div>
 
 
 
