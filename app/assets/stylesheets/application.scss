@@ -47,7 +47,9 @@ html {
 }
 
 .google-adsense {
-
+  position: fixed;
+  right: 0;
+  bottom: 0;
 }
 .ui-autocomplete .ui-menu-item .ui-state-focus{
   border-radius: 5px;
