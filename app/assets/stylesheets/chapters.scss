@@ -86,7 +86,7 @@
 
 .author-avatar {
   background-color: #f5f5f5;
-  height: 225px;
+  height: 250px;
 }
 
 .author-avatar img{
@@ -99,7 +99,12 @@
 }
 
 .book-title {
-  padding-top: 2px
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
 }
 
 .written-by {
@@ -108,6 +113,9 @@
 }
 .author-name {
   padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 10px;
+
 }
 
 .author-name a {
