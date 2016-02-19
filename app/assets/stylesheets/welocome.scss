@@ -3,7 +3,14 @@ html {
 }
 
 body.landing {
-  background-color: #000;
+    padding-top: 31px;
+    min-height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .giraffe-content {
@@ -13,7 +20,7 @@ body.landing {
   margin-top: -30px;
   background-image: image-url("cat-giraffe-copy.png");
   background-repeat: no-repeat;
-  background-color: #008385;
+  background-color: #022145;
   background-position: center center;
   background-size: cover; 
 }
@@ -34,14 +41,14 @@ body.landing {
 
 .hero-title {
 
-     background-color: #008385;
+      background-color: #35465c;
      color: #fff;
      width: 25%;
      padding-top: 12px;
      margin-left: 37.5%;
      margin-right: 37.5%;
      position: absolute;            
-     top: 55%;                     
+     top: 65%;                     
      text-align: center;         
      font-size: 1rem; 
      height: 3rem;            
@@ -80,12 +87,15 @@ body.landing {
  }
 
 .hero-paragraph {
-     color: #000;
+     color: #fff;
      position: absolute;       
      top: 37%;
-     margin-left: 150px;
-     margin-right: 150px;                 
+     padding-bottom: 5rem;
+     margin-left: 210px;
+     margin-right: 210px;                 
      text-align: center;   
+     font-weight: 100;
+     letter-spacing: 3px;
  }
 
 @media (max-width: 860px) {

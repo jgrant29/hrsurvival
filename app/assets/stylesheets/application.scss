@@ -10,22 +10,22 @@
 @import "search";
 @import "font-awesome";
 
-body {
-    padding-top: 31px;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    z-index: -1;
-}
-
 html {
-  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100%;
   font-size: 100%;
 }
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 31px;
+  min-height: 100%;
+  font-size: 100%;
+}
+
+
+
 
 .ui-menu {
   border-radius: 5px;
@@ -68,7 +68,7 @@ html {
 .navbar-default {
   background-color: #fff;
   border-bottom: none;
-  box-shadow: 0px 1px 4px #888888;
+  box-shadow: 0px .3px 2px #888888;
 
   }
 
@@ -84,11 +84,18 @@ html {
   background-size: cover; }
 
 .navbar-default .navbar-brand {
-   color: #008385;
+  color: #074792;
+    &:hover {
+      color: #2178DE;
+    }
+
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #008385;
+  color: #074792;
+    &:hover {
+      color: #2178DE;
+    }
 }
 
 .navbar-form .form-control {
@@ -100,22 +107,22 @@ html {
 }
 
 a {
-  color: #000;
+  color: #074792;
 
   &:hover {
-    color: #008385;
+    color: #2178DE;
   }
 }
 
 .btn-default {
     color: #fff;
-    background-color: #008385;
-    border-color: #008385;
+    background-color: #074792;
+    border-color: #074792;
 
     &:hover {
-      background-color: #009092;
+      background-color: #2178DE;
       color: #fff;
-      border-color: #009092;
+      border-color: #2178DE;
     };
 }
 
@@ -124,14 +131,13 @@ a {
 }
 
 .footer {
-    border-top: 4px solid #fff;
-    position: relative;
     bottom: 0;
     width: 100%;
-    height: 75px;
-    background-color: #f5f5f5;
-    margin-bottom: -60px;
-    padding-top: 25px;
+    height: 100px;
+    color: #fff;
+    background-color: #452D00;
+    margin-top: 30px;
+    border-top: 15px solid #926007;
 }
 
 

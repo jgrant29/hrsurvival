@@ -1,10 +1,26 @@
-<div class="container">
-  <h1>Search Results</h1>
-  <p><%= @tableofcontent_searches.total_count %> search results found in about <%= @tableofcontent_searches.took %> milliseconds
-    <% @tableofcontent_searches.with_details.each do |tableofcontent_search, details| %>
-      <% if tableofcontent_search.class == Tableofcontent %>
-    <h3><%= link_to tableofcontent_search.title, [tableofcontent_search.chapter.book, tableofcontent_search.chapter, tableofcontent_search], class: "search-title" %></h3>
-    <p><%= simple_format details[:highlight][:body] %></p>
-    <% end %>
-<% end %>
+<div class="container search-body"><br>
+  <div class="row">
+    <h1>Results</h1>
+    <p><%= @tableofcontent_searches.total_count %> search result(s) found in about <%= @tableofcontent_searches.took %> milliseconds<hr>
+      <div class="col-md-8">
+        <% @tableofcontent_searches.with_details.each do |tableofcontent_search, details| %>
+          <% if tableofcontent_search.class == Tableofcontent %>
+            <h3><%= link_to tableofcontent_search.title, [tableofcontent_search.chapter.book, tableofcontent_search.chapter, tableofcontent_search], class: "search-title" %></h3>
+            <div class="search-results-filter"><%= simple_format details[:highlight][:body], class: "search-results-filter" %></div><hr>
+            <% end %>
+          <% end %>
+      </div>
+      <div class="col-md-4">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- hrsurvival v2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2109246747658646"
+             data-ad-slot="3005377619"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </div>
 </div>

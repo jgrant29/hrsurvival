@@ -12,6 +12,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @book = Book.find(params[:id])
+    @chapter = Chapter.find(params[:id])
     @chapters = @book.chapters
     authorize @book
   end

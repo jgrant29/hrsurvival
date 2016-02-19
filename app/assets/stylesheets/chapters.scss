@@ -1,3 +1,5 @@
+
+
 .col-md-9 {
   padding-left: 0;
   padding-right: 0;
@@ -19,13 +21,12 @@
 }
 
 .panel-title {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  margin-left: 25px;
+  font-weight: 200;
 }
 
 @media (max-width: 990px) {
-  .col-md-3-mobile {
-    display: none;
-  }
 }
 
 .col-md-3 {
@@ -35,6 +36,18 @@
 
 .col-md-2 {
   margin-top: 20px;
+}
+
+.panel-default > .panel-heading {
+  color: #074792;
+  background-color: #fff;
+  border-right: 1px solid #452D00;
+}
+
+.panel-heading {
+  border-bottom: none;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
 }
 
 
@@ -71,13 +84,21 @@
   padding-top: 21px;
   border-size: border-box;
   color: #003838;
+  font-weight: 200;
 }
 
 .toc-title {
   background-color: #fff;
   padding-top: 1rem;
   padding-left: 15px;
-  color: #008385;
+  color: #452D00;
+  font-weight: 200;
+
+}
+
+.toc-title-panel {
+  font-weight: 200;
+  color: #853200;
 }
 
 .toc-body{
@@ -86,55 +107,54 @@
 }
 
 .author-avatar {
-  background-color: #f5f5f5;
-  height: 255px;
+  background-color: #fff;
+  height: 150px;
+  border-right: 1px solid #452D00;
 }
 
 .author-avatar img{
   height: 50px;
-  width: 42px;
+  width: 50px;
   border-radius: 50%;
-  margin-top: 40px;
+  margin-top: 15x;
   border: 2px solid #fff;
-  size: cover;
 }
 
 .book-title {
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
-  padding-top: 10px;
+  background-color: #fff;
+  padding-top: 30px;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 10px;
+  font-weight: 200;
+  border-right: 1px solid #452D00;
+
 }
 
 .written-by {
   text-transform: uppercase;
   margin-top: 5px;
+  font-weight: 200;
 }
 .author-name {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #fff;
-  margin-bottom: 10px;
-
-}
-
-.author-name a {
-  color: #853200;
+  margin-bottom: 5px;
+  font-weight: 200;
 }
 
 .social-media-links {
-  border-bottom: 1px solid #fff;
   padding-bottom: 10px;
 }
+
 .fa-facebook-official{
+  color: #777;
   &:hover {
-    text-decoration: none;
+    
     color: #3b5998;
   };
 }
 
 .fa-twitter {
+  color: #777;
   &:hover {
     color: #4099FF;
     text-decoration: none;
@@ -142,6 +162,7 @@
 }
 
 .fa-youtube-square {
+  color: #777;
   &:hover {
     color: #b31217;
     text-decoration: none;
@@ -149,16 +170,26 @@
 }
 
 .fa-tumblr-square {
+  color: #777;
   &:hover {
-    color: #35465c;
+    color: #b31217;
     text-decoration: none;
-
   };
 }
 
 .fa-linkedin-square {
+  color: #777;
   &:hover {
     color: #007bb5;
     text-decoration: none;
   };
+}
+
+.glyphicon {
+  font-weight: 200px;
+}
+.glyphicon-plus {
+  margin-top: 7px;
+  font-size: 10px !important;
+  float: right;
 }

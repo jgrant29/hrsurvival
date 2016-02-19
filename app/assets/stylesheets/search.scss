@@ -1,3 +1,31 @@
-.search-title {
+.search-body {
+  margin-top: 3rem;
+
+  }
+
+  .search-title {
   color: #008385;
+  display: inline;
 }
+
+.search-title{
+  color: #074792;
+  display: inline;
+}
+
+.search-results-filter
+ {
+  font-size: 1rem;
+}
+
+.search-results-filter h2 {
+  font-size: 1rem;
+}
+
+
+.search-results-filter div, 
+.search-results-filter br,{
+  font-size: 5rem;
+  display: none;
+}
+

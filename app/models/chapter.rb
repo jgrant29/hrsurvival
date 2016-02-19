@@ -1,5 +1,5 @@
 class Chapter < ActiveRecord::Base
-  searchkick text_start: [:body], highlight: [:body]
+  searchkick word_start: [:title]
   belongs_to :book
   has_many :tableofcontents, dependent: :destroy
 
