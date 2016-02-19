@@ -27,6 +27,9 @@
 }
 
 @media (max-width: 990px) {
+  .col-md-3-mobile {
+  display: none;
+}
 }
 
 .col-md-3 {
@@ -37,6 +40,7 @@
 .col-md-2 {
   margin-top: 20px;
 }
+
 
 .panel-default > .panel-heading {
   color: #074792;
