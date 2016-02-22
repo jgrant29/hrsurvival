@@ -106,8 +106,18 @@
 }
 
 .toc-body{
-  padding-left: 20px;
-  padding-right: 15px;
+  font-size: 1.05rem;
+  line-height: 30px;
+  padding-left: 30px;
+  padding-right: 25px;
+}
+
+.toc-body br{
+  display: none;
+}
+
+.toc-body a{
+  text-decoration: underline;
 }
 
 .author-avatar {
@@ -176,7 +186,7 @@
 .fa-tumblr-square {
   color: #777;
   &:hover {
-    color: #b31217;
+    color: #35465c;
     text-decoration: none;
   };
 }
@@ -185,6 +195,12 @@
   color: #777;
   &:hover {
     color: #007bb5;
+    text-decoration: none;
+  };
+}
+
+.fa a{
+  &:hover {
     text-decoration: none;
   };
 }
