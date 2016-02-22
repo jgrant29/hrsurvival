@@ -26,7 +26,10 @@
 .search-results-filter br,
 .search-results-filter tr,
 .search-results-filter h3,
-.search-results-filter h4,{
+.search-results-filter h4,
+.search-results-filter th,
+.search-results-filter td,
+.search-results-filter table,{
   font-size: 5rem;
   display: none;
 }
