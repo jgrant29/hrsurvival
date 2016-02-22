@@ -6,7 +6,7 @@
         <% @tableofcontent_searches.with_details.each do |tableofcontent_search, details| %>
           <% if tableofcontent_search.class == Tableofcontent %>
             <h3><%= link_to tableofcontent_search.title, [tableofcontent_search.chapter.book, tableofcontent_search.chapter, tableofcontent_search], class: "search-title" %></h3>
-            <div class=""><%= simple_format word_wrap details[:highlight][:body] %></div><hr>
+            <div class="search-results-filter"><%= simple_format word_wrap details[:highlight][:body], class: "search-results-filter" %></div><hr>
             <% end %>
           <% end %>
       </div>
