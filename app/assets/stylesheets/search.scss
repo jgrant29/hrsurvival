@@ -29,7 +29,10 @@
 .search-results-filter h4,
 .search-results-filter th,
 .search-results-filter td,
-.search-results-filter table,{
+.search-results-filter table,
+.search-results-filter li,
+.search-results-filter ol,
+.search-results-filter ul,
   display: none;
 }
 
