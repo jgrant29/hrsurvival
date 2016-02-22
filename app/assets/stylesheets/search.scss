@@ -23,7 +23,10 @@
 
 
 .search-results-filter div, 
-.search-results-filter br,{
+.search-results-filter br,
+.search-results-filter tr,
+.search-results-filter h3,
+.search-results-filter h4,{
   font-size: 5rem;
   display: none;
 }
