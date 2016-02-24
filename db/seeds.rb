@@ -34,15 +34,23 @@ end
 
 chapters = Chapter.all
 
-100.times do
+1000.times do
     Tableofcontent.create!(
         title: Faker::Lorem.sentence,
         chapter: chapters.sample,
-        body: Faker::Lorem.paragraph,
+        body: Faker::Lorem.paragraph(500),
         author: Faker::Name.name,
     )
 end
 tableofcontents = Tableofcontent.all
+
+50.times do
+    Article.create!(
+        title: Faker::Lorem.sentence,
+        body: Faker::Lorem.paragraph(500),
+    )
+end
+Articles = Article.all
 
 admin = User.new(
     email: 'justin@accr.biz',
@@ -55,6 +63,9 @@ admin.save!
 puts "Seed Finished"
 puts "#{Book.count} books created"
 puts "#{Chapter.count} chapters created"
+puts "#{Tableofcontent.count} chapters created"
+puts "#{Article.count} chapters created"
+
 
   
 

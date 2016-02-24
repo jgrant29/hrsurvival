@@ -24,6 +24,7 @@ gem 'fog'
 gem 'net-ssh'
 gem "font-ionicons-rails"
 gem "font-awesome-rails"
+gem 'kaminari'
 
 
 

@@ -1,0 +1,41 @@
+
+  <div class="row">
+    <div class="col-md-12">
+      <%= form_for @article do |a| %>
+
+        <div class="form-group">
+          <%= a.label :title %><br>
+          <%= a.text_field :title, class: 'form-control', placeholder: "Enter article title" %>
+        </div><br>
+        <div class="form-group">
+          <%= a.label :description %><br>
+          <%= a.text_field :description, class: 'form-control', placeholder: "Enter body description" %>
+        </div><br>
+        <div class="form-group">
+          <%= a.label :body %><br>
+          <%= a.cktext_area :body, :ckeditor => {:toolbar => 'Full'}, class: 'form-control' %>
+        </div><br>
+        <div class="form-group">
+          <%= a.label :published, class: "checkbox" do %><br>
+          <%= a.check_box :published %> Published article?
+          <% end %>
+        </div><br>
+
+        <% if @article.blogpicture? %>
+          <div class="form-group">
+            <p>Article Image</p>
+            <%= image_tag( @article.blogpicture.url ) %>
+          </div>
+          <% end %>
+        <div class="form-group">
+          <%= a.label :blogpicture %><br>
+          <%= a.file_field :blogpicture  %>
+          <%= a.hidden_field :blogpicture_cache %>
+        </div><br>
+        <div class="actions">
+          <%= a.submit "Save", class: 'btn btn-success' %>
+        </div><br>
+      <% end %>
+    </div>
+  </div><br>
+

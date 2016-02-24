@@ -1,14 +1,11 @@
 <div class="container search-body"><br>
   <div class="row">
     <h1>Results</h1>
-    <p><%= @tableofcontent_searches.total_count %> search result(s) found in about <%= @tableofcontent_searches.took %> milliseconds<hr>
+        <p><%= @results.total_count %> different results for "<strong><%= params[:query] %></strong>" found in about <%= @results.took%> milliseconds<hr>
       <div class="col-md-8">
-        <% @tableofcontent_searches.with_details.each do |tableofcontent_search, details| %>
-          <% if tableofcontent_search.class == Tableofcontent %>
-            <h3><%= link_to tableofcontent_search.title, [tableofcontent_search.chapter.book, tableofcontent_search.chapter, tableofcontent_search], class: "search-title" %></h3>
-            <div class="search-results-filter"><%= simple_format word_wrap details[:highlight][:body], class: "search-results-filter" %></div><hr>
-            <% end %>
-          <% end %>
+      <%= render 'toc' %>
+      <%= render "article" %>
+
       </div>
       <div class="col-md-4">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -23,4 +20,7 @@
         </script>
       </div>
     </div>
+<%= paginate @tableofcontent_searches && @article_searches%>
 </div>
+          
+

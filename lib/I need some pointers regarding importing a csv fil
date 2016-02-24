@@ -1,0 +1,24 @@
+I need some pointers regarding importing a csv file with rails.  
+
+I have the code below in /lib/tasks/import.rake 
+
+        require 'csv'
+            CSV.foreach("lib/articles.csv", headers: true, encoding: "ISO8859-1") do |row|
+                @article = Article.new(title: row["Article title"], body: row["Body"], user: User.find(1))
+        end
+
+When I run rake `import:articles`
+
+I get this error:
+NameError: uninitialized constant Article
+        /Users/justinMgrant/code/hrsurvival/lib/tasks/import.rake:8:in `block in <top (required)>'
+        /Users/justinMgrant/code/hrsurvival/lib/tasks/import.rake:7:in `<top (required)>'
+        /Users/justinMgrant/.rvm/gems/ruby-2.2.1/gems/railties-4.2.2/lib/rails/engine.rb:658:in `block in run_tasks_blocks'
+        /Users/justinMgrant/.rvm/gems/ruby-2.2.1/gems/railties-4.2.2/lib/rails/engine.rb:658:in `each'
+        /Users/justinMgrant/.rvm/gems/ruby-2.2.1/gems/railties-4.2.2/lib/rails/engine.rb:658:in `run_tasks_blocks'
+        /Users/justinMgrant/.rvm/gems/ruby-2.2.1/gems/railties-4.2.2/lib/rails/application.rb:452:in `run_tasks_blocks'
+        /Users/justinMgrant/.rvm/gems/ruby-2.2.1/gems/railties-4.2.2/lib/rails/engine.rb:453:in `load_tasks'
+        /Users/justinMgrant/code/hrsurvival/Rakefile:6:in `<top (required)>'
+        (See full trace by running task with --trace)
+
+Any idea what I’m doing wrong? 
