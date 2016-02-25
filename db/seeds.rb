@@ -34,11 +34,11 @@ end
 
 chapters = Chapter.all
 
-100.times do
+50.times do
     Tableofcontent.create!(
         title: Faker::Lorem.sentence,
         chapter: chapters.sample,
-        body: Faker::Lorem.paragraph(500),
+        body: Faker::Hipster.paragraph(250),
         author: Faker::Name.name,
     )
 end
@@ -47,7 +47,7 @@ tableofcontents = Tableofcontent.all
 40.times do
     Article.create!(
         title: Faker::Lorem.sentence,
-        body: Faker::Lorem.paragraph(500),
+        body: Faker::Hipster.paragraph(300),
     )
 end
 Articles = Article.all
