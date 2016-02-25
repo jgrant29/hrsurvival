@@ -2,30 +2,18 @@ require 'faker'
 
 # Create Book
 
-2.times do
-   user = User.new(
-        name:  Faker::Name.name, 
-        email: Faker::Internet.email,
-        password: Faker::Lorem.characters(10)
-        )
-    user.skip_confirmation!
-    user.save
-end
-users = User.all
-
 1.times do 
   Book.create!(
-    title:     Faker::Book.sentence,
+    title:     Faker::Book.title,
     )
 end
 books = Book.all
 
 # Create Chapters
-15.times do 
+5.times do 
   Chapter.create!(
     book: books.sample,
-    title: Faker::Book.sentence, 
-    author: Faker::Book.author
+    title: Faker::Book.title
     )
 end
 
@@ -33,18 +21,18 @@ chapters = Chapter.all
 
 25.times do
     Tableofcontent.create!(
-        title: Faker::Book.sentence,
+        title: Faker::Book.title,
         chapter: chapters.sample,
-        body: Faker::Lorem.paragraph(1),
-        author: Faker::Name.name,
+        body: Faker::Lorem.paragraph(10),
+        author: Faker::Book.author
     )
 end
 tableofcontents = Tableofcontent.all
 
 10.times do
     Article.create!(
-        title: Faker::Book.sentence,
-        body: Faker::Lorem.paragraph(10),
+        title: Faker::Lorem.sentence,
+        body: Faker::Lorem.paragraph(10)
     )
 end
 Articles = Article.all
