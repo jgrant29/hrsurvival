@@ -11,14 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225195835) do
+ActiveRecord::Schema.define(version: 20160223195902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", id: false, force: :cascade do |t|
-    t.string "title"
-    t.text   "body"
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.text     "body"
+    t.boolean  "published"
+    t.string   "image"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "article_image"
+    t.string   "blogpicture"
   end
 
   create_table "books", force: :cascade do |t|
