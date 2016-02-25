@@ -51,11 +51,11 @@
           <div id="<%= chapter.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
             <% if policy(@book).update? %>
-            <%= link_to "Edit Chapter", edit_chapter_path, class: 'btn btn-primary' %>
-            <%= link_to "New TOC", new_chapter_tableofcontent_path(@book, @chapter, @tableofcontent), class: 'btn btn-success' %>
+            <%= link_to "Edit Chapter", edit_book_chapter_path(@book, @chapter), class: 'btn btn-primary' %>
+            <%= link_to "New TOC", new_book_chapter_tableofcontent_path(@book, @chapter, @tableofcontent), class: 'btn btn-success' %>
           <% end %>
               <% chapter.tableofcontents.each do |toc| %>
-            <h5 class="toc-title-panel">
+            <h5 class="toc-title-panel"> 
               <%= link_to toc.title, book_chapter_tableofcontent_path(@book, @chapter, toc) %></h5>
             <% end %>
             </div>

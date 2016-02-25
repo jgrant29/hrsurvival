@@ -56,7 +56,7 @@ class TableofcontentsController < ApplicationController
     @tableofcontent = Tableofcontent.find(params[:id])
     respond_to do |format|
       if @tableofcontent.update(tableofcontent_params)
-        format.html { redirect_to [@book, @chapter], notice: 'Tableofcontent was successfully updated.' }
+        format.html { redirect_to [@book, @chapter, @tableofcontent], notice: 'Tableofcontent was successfully updated.' }
         format.json { render :show, status: :ok, location: @tableofcontent }
       else
         format.html { render :edit }

@@ -5,10 +5,10 @@ namespace :import do
 
   desc 'An optional description for what the task does'
   task :articles => :environment do
-        CSV.foreach("lib/articles.csv", headers: true, encoding: 'UTF-8') do |row|
+        CSV.foreach("lib/articles.csv", headers: true) do |row|
         Article.create!(
-          title: row["Title"], 
-          body: row["Body"], 
+          title: row[0], 
+          body: row[1], 
         )
       end
   end
