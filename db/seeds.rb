@@ -15,7 +15,7 @@ users = User.all
 
 1.times do 
   Book.create!(
-    title:     Faker::Book.title,
+    title:     Faker::Book.sentence,
     )
 end
 books = Book.all
