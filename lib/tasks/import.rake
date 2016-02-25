@@ -7,8 +7,8 @@ namespace :import do
   task :articles => :environment do
         CSV.foreach("lib/articles.csv") do |row|
         Article.create!(
-          title: row["Title"], 
-          body: row["Body"], 
+          title: row[0], 
+          body: row[1], 
         )
       end
   end
