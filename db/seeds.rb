@@ -26,7 +26,7 @@ books = Book.all
   Chapter.create!(
     book: books.sample,
     title: Faker::Book.title, 
-    body:  Faker::Lorem.paragraph(3),
+    body:  Faker::Lorem.paragraph(1),
     description: Faker::Lorem.sentence,
     author: Faker::Book.author
     )
@@ -34,11 +34,11 @@ end
 
 chapters = Chapter.all
 
-50.times do
+100.times do
     Tableofcontent.create!(
         title: Faker::Lorem.sentence,
         chapter: chapters.sample,
-        body: Faker::Hipster.paragraph(250),
+        body: Faker::Hipster.paragraph(2),
         author: Faker::Name.name,
     )
 end
@@ -47,7 +47,7 @@ tableofcontents = Tableofcontent.all
 40.times do
     Article.create!(
         title: Faker::Lorem.sentence,
-        body: Faker::Hipster.paragraph(300),
+        body: Faker::Hipster.paragraph(3),
     )
 end
 Articles = Article.all
