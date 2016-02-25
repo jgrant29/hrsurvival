@@ -21,10 +21,10 @@ end
 books = Book.all
 
 # Create Chapters
-10.times do 
+5.times do 
   Chapter.create!(
     book: books.sample,
-    title: Faker::Book.title, 
+    title: Faker::Book.sentence, 
     description: Faker::Lorem.sentence,
     author: Faker::Book.author
     )
@@ -32,17 +32,17 @@ end
 
 chapters = Chapter.all
 
-50.times do
+25.times do
     Tableofcontent.create!(
-        title: Faker::Lorem.sentence,
+        title: Faker::Book.sentence,
         chapter: chapters.sample,
-        body: Faker::Lorem.paragraph(100),
+        body: Faker::Lorem.paragraph(30),
         author: Faker::Name.name,
     )
 end
 tableofcontents = Tableofcontent.all
 
-20.times do
+10.times do
     Article.create!(
         title: Faker::Lorem.sentence,
         body: Faker::Lorem.paragraph(10),
@@ -50,6 +50,13 @@ tableofcontents = Tableofcontent.all
 end
 Articles = Article.all
 
+admin = User.new(
+    email: 'justin@accr.biz',
+    password: 'dirtbag7!',
+    role: 'admin'
+    )
+admin.skip_confirmation!
+admin.save!
 
 puts "Seed Finished"
 puts "#{Book.count} books created"
