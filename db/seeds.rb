@@ -13,7 +13,7 @@ require 'faker'
 end
 users = User.all
 
-2.times do 
+1.times do 
   Book.create!(
     title:     Faker::Book.title,
     body:     Faker::Lorem.paragraph
@@ -22,7 +22,7 @@ end
 books = Book.all
 
 # Create Chapters
-35.times do 
+10.times do 
   Chapter.create!(
     book: books.sample,
     title: Faker::Book.title, 
@@ -34,7 +34,7 @@ end
 
 chapters = Chapter.all
 
-1000.times do
+100.times do
     Tableofcontent.create!(
         title: Faker::Lorem.sentence,
         chapter: chapters.sample,
@@ -44,7 +44,7 @@ chapters = Chapter.all
 end
 tableofcontents = Tableofcontent.all
 
-50.times do
+40.times do
     Article.create!(
         title: Faker::Lorem.sentence,
         body: Faker::Lorem.paragraph(500),
