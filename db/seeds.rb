@@ -10,7 +10,7 @@ end
 books = Book.all
 
 # Create Chapters
-5.times do 
+15.times do 
   Chapter.create!(
     book: books.sample,
     title: Faker::Book.title
