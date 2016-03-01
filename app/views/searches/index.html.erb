@@ -1,7 +1,7 @@
 <div class="container search-body"><br>
   <div class="row">
     <h1>Results</h1>
-        <p><%= @results.total_count %> different results for "<strong><%= params[:query] %></strong>" found in about <%= @results.took%> milliseconds<hr>
+        <p><%= @results.total_count %> different results for "<strong><%= params[:query] %></strong>" found in about <%= @results.took %> milliseconds<hr>
       <div class="col-md-8">
       <%= render 'toc' %>
       <%= render "article" %>
