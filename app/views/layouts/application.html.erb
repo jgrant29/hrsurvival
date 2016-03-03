@@ -25,8 +25,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/books/1">Topics <span class="sr-only">(current)</span></a></li>
-          <li><a href="/articles">Articles <span class="sr-only">(current)</span></a></li>
+          <li><a href="/books/1">Topics</a></li>
+          <li><a href="/articles">Articles</a></li>
+          <li><a href="/welocome/index">Sign up</a></li>
        </ul>
         <%= render partial: 'searches/form' %>
       </div><!-- /.navbar-collapse -->
@@ -37,17 +38,17 @@
 
   <% if flash[:notice] %>
   <div class="alert alert-success">
-    <br><button type="button" class="close" data-dismiss="alert">&times;</button>
+     <br><br><button type="button" class="close" data-dismiss="alert">&times;</button>
     <%= flash[:notice] %>
   </div>
   <% elsif flash[:error] %>
   <div class="alert alert-danger">
-    <br><button type="button" class="close" data-dismiss="alert">&times;</button>
+     <br><br><button type="button" class="close" data-dismiss="alert">&times;</button>
     <%= flash[:error] %>
   </div>
   <% elsif flash[:alert] %>
   <div class="alert alert-warning">
-    <br><button type="button" class="close" data-dismiss="alert">&times;</button>
+     <br><br><button type="button" class="close" data-dismiss="alert">&times;</button>
     <%= flash[:alert] %>
   </div>
   <% end %>

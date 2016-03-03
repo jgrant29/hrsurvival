@@ -22,7 +22,7 @@
     <% group.each do |articles| %>
     <div class="col-md-4">
       <h3><%= link_to articles.title, articles %></h3>
-      <p><%= simple_format truncate(articles.body, length: 200) %></p>
+      <p><%= simple_format articles.body[0...300] %></p>
       <div><%= link_to "Read more", articles%></div>
         <% if policy(@articles).update? %>
           <div><%= link_to 'Edit', edit_article_path(articles) %></div>
@@ -31,8 +31,9 @@
     </div>
     <% end %>
   </div>
-<% end %>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<% end %>   <br> 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- hrsurvival v2 -2 -->
     <ins class="adsbygoogle"
          style="display:block"
@@ -43,4 +44,6 @@
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </div>
+  <%= render partial: 'footer/footer' %>
+
 

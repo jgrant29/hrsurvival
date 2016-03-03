@@ -56,6 +56,8 @@ class ChaptersController < ApplicationController
   # PATCH/PUT /chapters/1.json
   def update
     @book = Book.find(params[:book_id])
+    @chapter = Chapter.new(chapter_params)
+    @chapter.book = @book
     authorize @chapter
     respond_to do |format|
       if @chapter.update(chapter_params)

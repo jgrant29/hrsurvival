@@ -90,20 +90,32 @@ body.landing {
 .hero-paragraph {
      color: #fff;
      position: absolute;       
-     top: 37%;
-     padding-bottom: 5rem;
-     margin-left: 210px;
-     margin-right: 210px;                 
+     top: 25%;
+     font-size: 2rem;
+     margin-left: 25%;
+     margin-right: 25%;               
      text-align: center;   
-     font-weight: 100;
      letter-spacing: 3px;
  }
 
+.sign-up-button {
+  background-color: #68780F;
+  color: #fff;
+  border: 1px solid #68780F;
+  border-radius: 5px;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  width: 15rem;
+
+  &:hover {
+    background-color: #7D910B;
+  };
+}
 @media (max-width: 860px) {
   .hero-paragraph {
-    top: 45%;
-    margin-left: 45px;
-    margin-right: 45px;
+    font-size: 1.5rem;
+    margin-right: 5%;
+    margin-left: 5%;
   }
 
    .hero-title {

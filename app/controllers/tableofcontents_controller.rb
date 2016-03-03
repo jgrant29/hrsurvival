@@ -5,6 +5,8 @@ class TableofcontentsController < ApplicationController
   # GET /tableofcontents.json
   def index
     @tableofcontents = Tableofcontent.all
+    @book = Book.find(params[:book_id])
+    @chapter = Chapter.find(params[:chapter_id])
   end
 
   # GET /tableofcontents/1

@@ -1,0 +1,6 @@
+New regulations added to "<%= @tableofcontent.title %>"
+<%= "=" * (@tableofcontent.title.length + 12) %>
+
+<%= truncate(@tableofcontent.body, length: 600, separator: ' ') %>
+
+Visit online at: <%= tableofcontent_rul(@tableofcontent, anchor: "update-#{@tableofcontent.id}") %>

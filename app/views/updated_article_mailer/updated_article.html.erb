@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-type" />
+    <style type="text/css">
+    .article-email {background-color: #022145; color: #fff; min-height: 100px; padding-left: 4rem; padding-right: 4rem; text-align: center; padding-top: 4rem;}
+    </style>
+  </head>
+  <body>
+    <h1 class="article-email">Updated article on hrsurvival<br> "<%= @article.title %>"</h1>
+    <p>
+      <%= simple_format @article.body[0...600] %>
+    </p>
+    <p>
+      <%= link_to "View updated article on hrsurvival.com", article_url(@article) %><br>
+      <%= link_to "Unsubscribe", unsubscribe_email_url(@email) %>
+    </p>
+  </body>
+</html>
