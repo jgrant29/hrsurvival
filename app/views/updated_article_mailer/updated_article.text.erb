@@ -1,0 +1,6 @@
+New comment to "<%= @article.title %>"
+<%= "=" * (@article.title.length + 12) %>
+
+<%= simple_format @article.body[0...600] %>
+
+Visit online at: <%= article_url(@article, anchor: "update-#{@article.id}") %>

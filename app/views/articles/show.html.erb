@@ -7,6 +7,7 @@
         <% @articles.each do |a| %>
           <h4><%= link_to a.title, a %></h4>
         <% end %>
+        <%= render partial: 'google/horizontal' %>
       </div>
     <br><div class="col-md-9">
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -19,7 +20,7 @@
       <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
-
+      <%= render partial: 'favorites/favorite', locals: { article: @article } %>
       <div class="toc-body">
         <h1><%= @article.title %></h1><hr>
         <% if policy(@articles).update? %>
@@ -40,13 +41,5 @@
     </div>
  </div>
 </div>
-<footer class="footer">
-  <div class="container">
-    <div class="col-md-6"><br>
-      <p>2014-2016 hrsuvival.  All rights reserved.</p>
-    </div>
-    <div class="col-md-6 text-right"><br>
-        <p>855-477-4675</p>
-    </div>
-  </div>
-</footer>
+  <%= render partial: 'footer/footer' %>
+

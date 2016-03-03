@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @email = Email.new(params)
   end
 
   # GET /articles/1/edit

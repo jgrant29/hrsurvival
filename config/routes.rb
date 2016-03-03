@@ -1,20 +1,26 @@
 Rails.application.routes.draw do
   
+  resources :emails
   resources :articles
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :books do
     resources :chapters, except: [:index]  do
-      resources :tableofcontents, except: [:index] do
+      resources :tableofcontents, except: [:index]
+      resources :favorites, only: [:create, :destroy]
          collection do 
           get :autocomplete
-        end
       end
     end
   end
 
+  resources :emails do
+    get :unsubscribe, on: :member
+  end
+
   resources :chapters do
     resources :tableofcontents, except: [:index] 
+    resources :favorites, only: [:create, :destroy]
   end
 
   resources :searches, only: :index do
