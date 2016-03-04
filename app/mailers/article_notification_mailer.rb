@@ -1,6 +1,4 @@
 class ArticleNotificationMailer < ApplicationMailer
-    default from: 'justin@accr.biz'
-
   def new_article(email, article)
     @email = email
     @article = article

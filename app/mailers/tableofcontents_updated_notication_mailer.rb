@@ -1,6 +1,4 @@
 class TableofcontentsUpdatedNoticationMailer < ApplicationMailer
-  default from: 'justin@accr.biz'
-
   def updated_tableofcontent(email, tableofcontent)
     @email = email
     @tableofcontent = tableofcontent

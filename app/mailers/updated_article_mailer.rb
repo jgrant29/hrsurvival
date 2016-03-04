@@ -1,6 +1,4 @@
 class UpdatedArticleMailer < ApplicationMailer
-    default from: 'justin@accr.biz'
-
   def updated_article(email, article)
     @email = email
     @article = article
