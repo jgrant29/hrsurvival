@@ -24,11 +24,12 @@ class EmailsController < ApplicationController
   # POST /emails
   # POST /emails.json
   def create
+    @article = Article.all
     @email = Email.new(email_params)
 
     respond_to do |format|
       if @email.save
-        format.html { redirect_to articles_path, notice: 'Thank you for signing up to our email notifications.  Please put info@hrsurvival.com in your contacts.'}
+        format.html { redirect_to articles_path, notice: 'Thank you for signing up to our email notifications.'}
         format.json { render :show, status: :created, location: @email }
       else
         format.html { render :new }

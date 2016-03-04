@@ -11,5 +11,3 @@ class TableofcontentsNewNoticationMailer < ApplicationMailer
       )
   end
 end
-
-end
