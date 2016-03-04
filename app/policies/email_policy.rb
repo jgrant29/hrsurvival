@@ -1,7 +1,7 @@
 class EmailPolicy < ApplicationPolicy
 
   def index?
-    create?
+    user.present? && user.admin?
   end
 
   def create? 
