@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
   resources :books do
     resources :chapters, except: [:index]  do
-      resources :tableofcontents, except: [:index]
-      resources :favorites, only: [:create, :destroy]
+      resources :tableofcontents, except: [:index] do
          collection do 
           get :autocomplete
+        end
       end
     end
   end
@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   end
 
   resources :chapters do
-    resources :tableofcontents, except: [:index] 
-    resources :favorites, only: [:create, :destroy]
+    resources :tableofcontents, except: [:index] do
+    end
   end
 
   resources :searches, only: :index do

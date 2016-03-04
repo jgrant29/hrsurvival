@@ -3,6 +3,6 @@ New regulations added to "<%= @tableofcontent.title %>"
 
 <%= truncate(@tableofcontent.body, length: 600, separator: ' ') %>
 
-Visit online at: <%= book_chapter_tableofcontent_url(:book_id, :chapter_id, @tableofcontent) %>
+Visit online at: <%= book_chapter_tableofcontent_url(@tableofcontent.chapter.book, @tableofcontent.chapter, @tableofcontent) %>
 
 Unsubscribe <%= unsubscribe_email_url(@email) %>

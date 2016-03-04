@@ -1,4 +1,5 @@
 class TableofcontentsNewNoticationMailer < ApplicationMailer
+
   def new_tableofcontent(email, tableofcontent)
     @email = email
     @tableofcontent = tableofcontent

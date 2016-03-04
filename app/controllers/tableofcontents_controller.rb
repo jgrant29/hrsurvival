@@ -88,6 +88,6 @@ class TableofcontentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tableofcontent_params
-      params.require(:tableofcontent).permit(:title, :description, :body, :public, :author, :chapter_id)
+      params.require(:tableofcontent).permit(:title, :description, :body, :public, :author, :chapter_id, :book_id)
     end
 end
