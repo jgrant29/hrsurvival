@@ -7,6 +7,7 @@
         <% @articles.each do |a| %>
           <h4><%= link_to a.title, a %></h4>
         <% end %>
+ 
         <%= render partial: 'google/horizontal' %>
       </div>
     <br><div class="col-md-9">
@@ -25,6 +26,8 @@
         <% if policy(@articles).update? %>
           <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %>
         <% end %>
+
+  <!-- Your share button code -->
         <div><%= simple_format @article.body %></div>
       </div><br>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

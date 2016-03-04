@@ -21,7 +21,7 @@ class Tableofcontent < ActiveRecord::Base
     def send_toc_new_notifications!
       email = Email.where(permissions: true)
       email.each do |email|
-        TableofcontentsNewNotificationsMailer.new_tableofcontent(email, self).deliver_later
+        TableofcontentsNewNoticationMailer.new_tableofcontent(email, self).deliver_later
       end
     end
   end
