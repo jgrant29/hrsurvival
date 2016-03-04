@@ -5,11 +5,13 @@ class EmailsController < ApplicationController
   # GET /emails.json
   def index
     @emails = Email.all
+    authorize @emails
   end
 
   # GET /emails/1
   # GET /emails/1.json
   def show
+    authorize @email
   end
 
   # GET /emails/new
@@ -19,6 +21,7 @@ class EmailsController < ApplicationController
 
   # GET /emails/1/edit
   def edit
+    authorize @email
   end
 
   # POST /emails
@@ -55,6 +58,7 @@ class EmailsController < ApplicationController
   # DELETE /emails/1
   # DELETE /emails/1.json
   def destroy
+    authorize @email
     @email.destroy
     respond_to do |format|
       format.html { redirect_to emails_url, notice: 'Email was successfully destroyed.' }

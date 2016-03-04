@@ -9,10 +9,10 @@
   <body>
     <h1 class="article-email">New regulations on hrsurvival<br> "<%= @tableofcontent.title %>"</h1>
     <p>
-      <%= simple_format @tableofcontent.body[0...300] %>
+      <div><%= simple_format @tableofcontent.body[0...300] %>...<div>
     </p>
     <p>
-            <%= link_to "View new regulations on hrsurvival.com", book_chapter_tableofcontent_url(@tableofcontent.chapter.book, @tableofcontent.chapter, @tableofcontent) %><br><br>
+    <%= link_to "View new regulations on hrsurvival.com", book_chapter_tableofcontent_url(@tableofcontent.chapter.book, @tableofcontent.chapter, @tableofcontent) %><br><br>
       <%= link_to "Unsubscribe", unsubscribe_email_url(@email) %>
 
     </p>

@@ -1,3 +1,4 @@
+<% if policy(@email).show? %>
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Emails</h1>
@@ -31,3 +32,5 @@
 <br>
 
 <%= link_to 'New Email', new_email_path %>
+
+<% end %>

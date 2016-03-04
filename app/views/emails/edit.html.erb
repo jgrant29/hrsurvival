@@ -1,10 +1,12 @@
-<div class="container">
+<% if policy(@email).show? %>
+  <div class="container">
 
-  <br><h1>Editing Email</h1>
+    <br><h1>Editing Email</h1>
 
-  <%= render 'form' %>
+    <%= render 'form' %>
 
-  <%= link_to 'Show', @email %> |
-  <%= link_to 'Back', emails_path %>
+    <%= link_to 'Show', @email %> |
+    <%= link_to 'Back', emails_path %>
 
-</div>
+  </div>
+<% end %>
