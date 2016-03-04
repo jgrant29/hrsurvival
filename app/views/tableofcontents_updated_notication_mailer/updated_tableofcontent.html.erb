@@ -12,7 +12,7 @@
       <%= simple_format @tableofcontent.body[0...600] %>
     </p>
     <p>
-      <%= link_to "Click here to view", book_chapter_tableofcontent_url(:book_id, :chapter_id, @tableofcontent) %><br>
+      <%= link_to "Click here to view", book_chapter_tableofcontent_url(:book_id, :chapter_id, @tableofcontent) %><br><br>
       <%= link_to "Unsubscribe", unsubscribe_email_url(@email) %>
     </p>
   </body>

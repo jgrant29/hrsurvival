@@ -12,7 +12,7 @@
       <%= simple_format @article.body[0...600] %>
     </p>
     <p>
-      <%= link_to "View new article", article_url(@article) %><br>
+      <%= link_to "View new article", article_url(@article) %><br><br>
       <%= link_to "Unsubscribe", unsubscribe_email_url(@email) %>
     </p>
   </body>

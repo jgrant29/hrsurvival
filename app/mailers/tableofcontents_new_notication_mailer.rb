@@ -7,7 +7,7 @@ class TableofcontentsNewNoticationMailer < ApplicationMailer
 
     mail(
       to: email.email,
-      subject: "New regulation, #{@tableofcontent.title} on hrsurvival.com"
+      subject: "New regulation #{@tableofcontent.title} on hrsurvival.com"
       )
   end
 end
