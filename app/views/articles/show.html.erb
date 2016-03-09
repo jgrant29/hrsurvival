@@ -26,8 +26,15 @@
         <% if policy(@articles).update? %>
           <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %>
         <% end %>
+        <strong><small>Share this article on 
+          <%= link_to 'https://www.facebook.com/sharer/sharer.php?u='+request.host+request.fullpath do %>
+            <%= fa_icon "facebook 2x"%>
+          <% end %>
+          <%= link_to 'https://twitter.com/intent/tweet?url=https://'+request.host+request.fullpath+'&text='+@article.title do %>
+            <%= fa_icon "twitter 2x"%>
+          <% end %>
+        </small></strong>
 
-  <!-- Your share button code -->
         <div><%= simple_format @article.body %></div>
       </div><br>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
