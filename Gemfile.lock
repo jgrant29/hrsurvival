@@ -302,6 +302,9 @@ GEM
       activemodel
       elasticsearch (>= 1)
       hashie
+    social-share-button (0.1.10)
+      coffee-rails
+      sass-rails
     spring (1.6.3)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -363,6 +366,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   searchkick
+  social-share-button
   spring
   turbolinks
   typedjs-rails (~> 1.0.2)

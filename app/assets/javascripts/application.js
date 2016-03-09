@@ -15,5 +15,6 @@
 //= require jquery-ui
 //= require bootstrap
 //= require typed
+//= require social-share-button
 //= require ckeditor/init
 //= require_tree .

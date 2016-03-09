@@ -1,5 +1,6 @@
 /* 
 *= require jquery-ui
+*= require social-share-button
 */
 
 @import "bootstrap-sprockets";
@@ -11,6 +12,7 @@
 @import "font-awesome";
 @import "articles";
 @import "emails";
+
 
 html {
   font-family: 'Open Sans', sans-serif;

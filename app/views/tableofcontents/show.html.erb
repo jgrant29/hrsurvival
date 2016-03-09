@@ -1,5 +1,9 @@
+  <meta property="og:url"           content="<%= request.fullpath %>" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="<%= @tableofcontent.title %>" />
+  <meta property="og:description"   content="<%= @tableofcontent.body %>" />
 
-<div class="container-fluid">
+  <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
     <div class="book-title text-center"><%= @book.title %></div>
@@ -86,18 +90,21 @@
 <div class="media">
 
 <!-- Facebook share button -->
-<!-- ============================== -->
 
-  <div class="fb-share-button" 
-    data-href="<%= 'request.host+request.fullpath' %>"
+<%= link_to "Share", 'https://www.facebook.com/sharer/sharer.php?u='+request.host+request.fullpath %>
+
+<!-- <div class="fb-share-button" 
+    data-href='https://arcane-depths-4071.herokuapp.com/books/1/chapters'
     data-layout="button_count">
-  </div>
-  <%= request.host+request.fullpath %>
+</div> -->
 
 <!-- End Facebook Share Button -->
-<!-- ============================== -->
 
+<!-- Tweet button -->
+<a class="twitter-share-button" href="<%= request.fullpath %>"> Tweet</a>
+<!-- End Tweet button -->
 
+  <%= request.host+request.fullpath %>
 
   <div class="media-body toc-body">      
       <div>
@@ -142,4 +149,14 @@
       $("#" + params[1] ).collapse('show');
     }
   })
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1643783199242616";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 </script>

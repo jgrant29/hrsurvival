@@ -25,6 +25,7 @@ gem 'net-ssh'
 gem "font-ionicons-rails"
 gem "font-awesome-rails"
 gem 'kaminari'
+gem 'social-share-button'
 
 
 
