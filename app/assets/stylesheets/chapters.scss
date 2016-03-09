@@ -115,7 +115,7 @@
 
 
 .toc-body a{
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .author-avatar {
@@ -157,9 +157,17 @@
 .fa-facebook-official{
   color: #777;
   &:hover {
-    
+    text-decoration: none;
     color: #3b5998;
-  };
+  }
+}
+
+.fa-facebook {
+  color: #777;
+  &:hover {
+    color: #3b5998;
+    text-decoration: none;
+  }
 }
 
 .fa-twitter {
