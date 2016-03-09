@@ -84,7 +84,21 @@
 
 <h1 class="toc-title"><%= @tableofcontent.title %></h1>
 <div class="media">
-<div class="fb-share-button" data-href="<%= request.host+request.fullpath %>" data-layout="button_count"></div>
+
+<!-- Facebook share button -->
+<!-- ============================== -->
+
+  <div class="fb-share-button" 
+    data-href="<%= 'request.host+request.fullpath' %>"
+    data-layout="button_count">
+  </div>
+  <%= request.host+request.fullpath %>
+
+<!-- End Facebook Share Button -->
+<!-- ============================== -->
+
+
+
   <div class="media-body toc-body">      
       <div>
         <% if policy(@chapter).update? %>
