@@ -186,6 +186,14 @@ a {
   }
 }
 
+.fa-twitter-square {
+  color: #777;
+  &:hover {
+    color: #4099FF;
+    text-decoration: none;
+  }
+}
+
 .fa-youtube-square {
   color: #777;
   &:hover {
@@ -202,6 +210,22 @@ a {
   };
 }
 
+.fa-tumblr {
+  color: #777;
+  &:hover {
+    color: #35465c;
+    text-decoration: none;
+  };
+}
+
+.fa-linkedin {
+  color: #777;
+  &:hover {
+    color: #0077b5;
+    text-decoration: none;
+  };
+}
+
 .fa-linkedin-square {
   color: #777;
   &:hover {
@@ -209,7 +233,13 @@ a {
     text-decoration: none;
   };
 }
-
+.fa-reddit-alien {
+  color: #777;
+  &:hover {
+    color: #ff4500;
+    text-decoration: none;
+  };
+}
 .glyphicon {
   font-weight: 200px;
 }

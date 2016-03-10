@@ -1,0 +1,17 @@
+    <strong><small>Share this article on 
+      <%= link_to 'https://www.facebook.com/sharer/sharer.php?u=' + request.host + request.fullpath, target: :blank do %>
+        <%= fa_icon "facebook 2x"%>
+      <% end %>
+      <%= link_to 'https://twitter.com/intent/tweet?url=https://' + request.host + request.fullpath + '&text=' + @tableofcontent.title do %>
+        <%= fa_icon "twitter 2x"%>
+      <% end %>
+      <%= link_to 'http://www.reddit.com/submit?url=' + request.host + request.fullpath + '&title=' + @tableofcontent.title do %>
+        <%= fa_icon "reddit-alien 2x" %> 
+      <% end %>
+      <%= link_to 'https://www.linkedin.com/shareArticle?mini=true&url=' + request.host + request.fullpath + '&title=' + @tableofcontent.title + '&summary=' + simple_format(@tableofcontent.body) do %>
+        <%= fa_icon "linkedin 2x" %> 
+      <% end %>
+      <%= link_to 'https://www.blogger.com/blog-this.g?u=' + request.host + request.fullpath + 'n=' + @tableofcontent.title + 't=' + simple_format(@tableofcontent.body) do %>
+        <%= fa_icon "blogger 2x" %> 
+      <% end %>
+    </small></strong>
