@@ -4,7 +4,21 @@
   <br><%= link_to 'New Article', new_article_path %>
 <% end %>
 
-<br><h1>Blog</h1><hr>
+<br><h1>Blog</h1>
+  <ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="articles">All</a></li>
+  <li role="presentation"><a href="articles/_hiring">Hiring</a></li>
+  <li role="presentation"><a href="#">Firing</a></li>
+  <li role="presentation"><a href="#">Reads</a></li>
+  <li role="presentation"><a href="#">Holiday</a></li>
+  <li role="presentation"><a href="#">Forms</a></li>
+  <li role="presentation"><a href="#">ADA/FMLA</a></li>
+  <li role="presentation"><a href="#">Management</a></li>
+  <li role="presentation"><a href="#">OSHA</a></li>
+  <li role="presentation"><a href="#">Wages</a></li>
+  <li role="presentation"><a href="#">Events</a></li>
+</ul>
+  <hr>
 <div class="google-adsense-blog">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- hrsurvival v2 -2 -->
@@ -22,6 +36,7 @@
     <% group.each do |articles| %>
     <div class="col-md-4">
       <h3><%= link_to articles.title, articles %></h3>
+      <i>Published <%= articles.created_at.strftime("%B %dth %Y") %></i>
       <p><%= simple_format articles.body[0...300] %></p>
       <div><%= link_to "Read more", articles%></div>
         <% if policy(@articles).update? %>

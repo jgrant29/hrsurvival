@@ -41,7 +41,7 @@ class TableofcontentsController < ApplicationController
 
     respond_to do |format|
       if @tableofcontent.save
-        format.html { redirect_to [@book, @chapter], notice: 'Tableofcontent was successfully created.' }
+        format.html { redirect_to [@book, @chapter, @tableofcontent], notice: 'Tableofcontent was successfully created.' }
         format.json { render :show, status: :created, location: @tableofcontent }
       else
         format.html { render :new }

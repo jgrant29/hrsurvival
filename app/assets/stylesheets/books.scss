@@ -19,7 +19,7 @@
 }
 
 .book-page-title {
-  padding-top: 1.5rem;
+  padding-top: 2rem;
   border-size: border-box;
   color: #fff;
   
@@ -29,4 +29,11 @@
   padding-top: -0.5rem;
   border-size: border-box;
   color: #000;
+}
+
+.edit {
+  font-size: .5rem;
+  &:hover {
+    text-decoration: underline;
+  };
 }

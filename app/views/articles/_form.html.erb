@@ -20,13 +20,102 @@
           <%= a.check_box :published %> Published article?
           <% end %>
         </div><br>
-
+        <h2>Select one or all topics to sort</h2>
+        <hr>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2 col-sm-3 col-xs-6">
+              <div class="form-group">
+                <%= a.label :hiring, class: "checkbox" do %>
+                <%= a.check_box :hiring %> Hiring?
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+              <div class="form-group">
+                <%= a.label :firing, class: "checkbox" do %>
+                <%= a.check_box :firing %> firing?
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+              <div class="form-group">
+                <%= a.label :good_read, class: "checkbox" do %>
+                <%= a.check_box :good_read %> Good Read?
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+              <div class="form-group">
+                <%= a.label :holidays_vacations, class: "checkbox" do %>
+                <%= a.check_box :holidays_vacations %> Holiday/Vacation?
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+              <div class="form-group">
+                <%= a.label :forms_policies, class: "checkbox" do %>
+                <%= a.check_box :forms_policies %> Form/Policy?
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+              <div class="form-group">
+                <%= a.label :leave_disability, class: "checkbox" do %>
+                <%= a.check_box :leave_disability %> Leave/Disibility?
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="form-group">
+              <%= a.label :management, class: "checkbox" do %>
+              <%= a.check_box :management %> Management?
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="form-group">
+              <%= a.label :performance, class: "checkbox" do %>
+              <%= a.check_box :performance %> Performance?
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="form-group">
+              <%= a.label :safety_health, class: "checkbox" do %>
+              <%= a.check_box :safety_health %> Safety/Health?
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="form-group">
+              <%= a.label :wages, class: "checkbox" do %>
+              <%= a.check_box :wages %> Wages?
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="form-group">
+              <%= a.label :webinars_events, class: "checkbox" do %>
+              <%= a.check_box :webinars_events %> Webinar/Event?
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-3 col-xs-6">
+            <div class="form-group">
+              <%= a.label :harrassment, class: "checkbox" do %>
+              <%= a.check_box :harrassment %> Harrassment?
+              <% end %>
+            </div>
+          </div>
+        </div><br><hr>
         <% if @article.blogpicture? %>
           <div class="form-group">
             <p>Article Image</p>
             <%= image_tag( @article.blogpicture.url ) %>
           </div>
-          <% end %>
+        <% end %>
         <div class="form-group">
           <%= a.label :blogpicture %><br>
           <%= a.file_field :blogpicture  %>

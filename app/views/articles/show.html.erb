@@ -2,10 +2,34 @@
   <div class="row">
     <div class="col-md-3 col-md-3-article col-md-3-mobile">
       <div>
-        <br><h2>More Articles</h2><hr>
+        <br><h3>Related Articles</h3><hr>
       </div>
         <% @articles.each do |a| %>
-          <h4><%= link_to a.title, a %></h4>
+          <% if a.hiring? && @article.hiring? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.firing? && @article.firing? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.good_read? && @article.good_read? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.holidays_vacations? && @article.holidays_vacations? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.forms_policies? && @article.forms_policies? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.leave_disability? && @article.leave_disability? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.management? && @article.management? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.performance? && @article.performance? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.safety_health? && @article.safety_health? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.wages? && @article.wages? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.webinars_events? && @article.webinars_events? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% elsif a.harrassment? && @article.harrassment? == true && a.title != @article.title %>
+            <h4><%= link_to a.title, a %></h4>
+          <% end %>
         <% end %>
  
         <%= render partial: 'google/horizontal' %>
@@ -23,6 +47,7 @@
       </script>
       <div class="toc-body">
         <h1><%= @article.title %></h1><hr>
+          <i>Published <%= @article.created_at.strftime("%B %dth %Y") %></i><br>
         <% if policy(@articles).update? %>
           <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %>
         <% end %>

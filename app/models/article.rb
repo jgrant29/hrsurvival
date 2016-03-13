@@ -4,6 +4,8 @@ class Article < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   has_many :emails
 
+  default_scope { order('title ASC') }
+
   after_create :send_new_notifications!
 
   after_update :send_update_notifications!

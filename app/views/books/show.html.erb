@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12 book-show text-center">
-    <div class="book-title book-show text-center"><%= @book.title %></div>
+    <h1 class="book-title book-show text-center"><%= @book.title %></h1><hr>
     <div class="author-avatar book-show text-center">
       <%= image_tag(@book.avatar.url) %>
       <div class="written-by">authored by</div>
@@ -36,27 +36,30 @@
         <% end %>
       <% end %>
     </div>
+    <% if policy(@book).update? %>
+      <%= link_to "Edit Book", edit_book_path(@book), class: 'btn btn-primary' %>
+      <%= link_to "New Chapter", new_book_chapter_path(@book), class: 'btn btn-primary' %>
+    <% end %>
     </div><hr>
     <% @book.chapters.each do |chapter| %>
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
           <div class="panel-heading book-show" role="tab" id="headingOne">
-            <h3 class="panel-title panel-book-title">
+            <div class="panel-title panel-book-title">
               <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= chapter.id %>" aria-expanded="false" aria-controls="<%= chapter.id %>">
-                  <%= chapter.title %>
+                  <h2><%= chapter.title %></h2>
                   <span class="glyphicon glyphicon-plus"></span>
-              </a>
-            </h3>
-          </div>
+                </a>
+              </div>
+              <% if policy(@book).update? %>
+                <%= link_to "Edit Chapter", edit_book_chapter_path(@book, chapter), class: "edit" %> | <%= link_to "New TOC", new_book_chapter_tableofcontent_path(@book, chapter), class: "edit" %>
+            <% end %>   
+            </div>
           <div id="<%= chapter.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
-            <% if policy(@book).update? %>
-            <%= link_to "Edit Chapter", edit_book_chapter_path(@book, @chapter), class: 'btn btn-primary' %>
-            <%= link_to "New TOC", new_book_chapter_tableofcontent_path(@book, @chapter, @tableofcontent), class: 'btn btn-success' %>
-          <% end %>
               <% chapter.tableofcontents.each do |toc| %>
-            <h5 class="toc-title-panel"> 
-              <%= link_to toc.title, book_chapter_tableofcontent_path(@book, @chapter, toc) %></h5>
+            <h3 class="toc-title-panel"> 
+              <%= link_to toc.title, book_chapter_tableofcontent_path(@book, chapter, toc) %></h3><hr>
             <% end %>
             </div>
           </div>

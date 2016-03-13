@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @chapter = Chapter.find(params[:id])
+    @tableofcontent = Tableofcontent.find(params[:id])
     @chapters = @book.chapters
     authorize @book
   end
@@ -31,6 +32,8 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
+    @chapter = Chapter.find(params[:id])
+    @tableofcontent = Tableofcontent.find(params[:id])
     @book = Book.new(book_params)
     authorize @book
     respond_to do |format|

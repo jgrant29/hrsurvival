@@ -16,7 +16,7 @@
     </div>
     <div class="form-group">
       <%= b.label :body %>
-      <%= b.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter Body description" %>
+      <%= b.text_area :body, :ckeditor => {:toolbar => 'Full'} %>
     </div>
     <% if @book.avatar? %>
       <div class="form-group">

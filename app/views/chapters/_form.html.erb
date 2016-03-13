@@ -1,4 +1,5 @@
-<%= form_for [@book, @chapter] do |f| %>
+<div class="container">
+  <%= form_for [@book, @chapter] do |f| %>
   <% if @chapter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@chapter.errors.count, "error") %> prohibited this chapter from being saved:</h2>
@@ -11,27 +12,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Enter the name of author" %>
+  </div><br>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
+    <%= f.cktext_area :body, :ckeditor => {:toolbar => 'Full'} %>
+  </div><br>
   <div class="field">
     <%= f.label :published %><br>
     <%= f.check_box :published %>
-  </div>
+  </div><br>
   <div class="field">
     <%= f.label :public %><br>
     <%= f.check_box :public %>
-  </div>
+  </div><br>
   <div class="field">
     <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
+    <%= f.text_field :author, class: 'form-control', placeholder: "Enter the name of author" %>
+  </div><br>
   <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit "Save", class: 'btn btn-success' %>
+  </div><br>
 <% end %>
