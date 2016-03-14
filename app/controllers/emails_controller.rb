@@ -12,6 +12,8 @@ class EmailsController < ApplicationController
   # GET /emails/1.json
   def show
     authorize @email
+    @email = Email.new
+    @article = Article.all
   end
 
   # GET /emails/new

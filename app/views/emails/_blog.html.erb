@@ -1,0 +1,26 @@
+<%= form_for(@email) do |f| %>
+  <% if @email.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@email.errors.count, "error") %> prohibited this email from being saved:</h2>
+
+      <ul>
+      <% @email.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h1 class="text-center">Sign up to receive Virginia and federal employment law updates.</h1>
+
+  <div class="field-group email-form-spacing">
+<!--     <%= f.label :email %>
+ -->    <%= f.text_field :email, class: "form-control", placeholder: "Enter your email address (required)" %>
+  </div>
+  <!-- <div class="field">
+    <%= f.label :permissions %><br>
+    <%= f.check_box :permissions %>
+  </div> -->
+  <div class="actions text-center">
+    <%= f.submit "Sign up", class: "sign-up-button" %>
+  </div>
+<% end %>

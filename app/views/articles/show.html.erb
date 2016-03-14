@@ -55,6 +55,8 @@
         <%= render partial: 'share_buttons/share_articles.html.erb' %>
 
         <div><%= simple_format @article.body %></div>
+        <div><%= render partial: '/emails/blog' %></div><br>
+
       </div><br>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- hrsurvival v2 -2 -->
@@ -66,7 +68,8 @@
       <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
-    </div>
+
+  </div>
  </div>
 </div>
   <%= render partial: 'footer/footer' %>

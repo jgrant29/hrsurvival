@@ -4,6 +4,7 @@ class TableofcontentsController < ApplicationController
   # GET /tableofcontents
   # GET /tableofcontents.json
   def index
+    @email = Email.new
     @tableofcontents = Tableofcontent.all
     @book = Book.find(params[:book_id])
     @chapter = Chapter.find(params[:chapter_id])
@@ -12,6 +13,7 @@ class TableofcontentsController < ApplicationController
   # GET /tableofcontents/1
   # GET /tableofcontents/1.json
   def show
+    @email = Email.new
     @book = Book.find(params[:book_id])
     @chapter = Chapter.find(params[:chapter_id])
     @tableofcontent = Tableofcontent.find(params[:id])
