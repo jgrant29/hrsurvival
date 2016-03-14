@@ -48,7 +48,6 @@
 .panel-default > .panel-heading {
   color: #074792;
   background-color: #fff;
-  border-right: 1px solid #452D00;
 }
 
 .panel-heading {
@@ -123,7 +122,6 @@
 .author-avatar {
   background-color: #fff;
   height: 200px;
-  border-right: 1px solid #452D00;
 }
 
 .author-avatar img{
@@ -138,7 +136,6 @@
   padding-right: 50px;
   padding-bottom: 10px;
   font-weight: 200;
-  border-right: 1px solid #452D00;
 
 }
 
@@ -244,7 +241,7 @@ a {
   font-weight: 200px;
 }
 .glyphicon-plus {
-  margin-top: 7px;
-  font-size: 10px !important;
-  float: right;
+    margin-top: -40px;
+    font-size: 19px !important;
+    float: right;
 }

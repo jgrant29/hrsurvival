@@ -1,0 +1,26 @@
+  <% @articles.in_groups_of(3, false).each do |all| %>
+  <div class="row">
+  <% all.each do |show| %>
+    <div class="col-md-4">
+      <h3><%= link_to show.title[0...50], show %></h3>
+      <i>Published <%= show.created_at.strftime("%B %dth %Y") %></i>
+      <p><%= simple_format show.body[0...300] %></p>
+      <div>
+        <%= link_to "Read more", show%>
+      </div>
+      <% if policy(@articles).update? %>
+        <div>
+          <%= link_to 'Edit', edit_article_path(show) %>
+        </div>
+        <div>
+          <%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div> <!-- end of destory button -->
+      <% end %> <!-- end of policy -->
+    </div> <!-- col-md-4 -->
+  <% end %>  
+  </div>
+<% end %>
+
+
+
+

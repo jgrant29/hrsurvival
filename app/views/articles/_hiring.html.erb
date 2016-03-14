@@ -1,33 +1,26 @@
-
-
-<% @articles.in_groups_of(3, false).each do |group| %>
+<% @articles.where(hiring: true).in_groups_of(3, false).each do |hires| %>
   <div class="row">
-    <% group.each do |articles| %>
-    <div class="col-md-4">
-      <h3><%= link_to articles.title, articles %></h3>
-      <i>Published <%= articles.created_at.strftime("%B-%d-%Y") %></i>
-      <p><%= simple_format articles.body[0...300] %></p>
-      <div><%= link_to "Read more", articles%></div>
+  <% hires.each do |hire| %>
+      <div class="col-md-4 length">
+        <h3><%= link_to hire.title, hire %></h3>
+        <i>Published <%= hire.created_at.strftime("%B %dth %Y") %></i>
+        <p><%= simple_format hire.body[0...300] %></p>
+        <div>
+          <%= link_to "Read more", hire%>
+        </div>
         <% if policy(@articles).update? %>
-          <div><%= link_to 'Edit', edit_article_path(articles) %></div>
-          <div><%= link_to 'Destroy', articles, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-        <% end %>
-    </div>
-    <% end %>
-  </div>
+          <div>
+            <%= link_to 'Edit', edit_article_path(hire) %>
+          </div>
+          <div>
+            <%= link_to 'Destroy', hire, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div> <!-- end of destory button -->
+        <% end %> <!-- end of policy -->
+      </div> <!-- col-md-4 -->
+    <% end %> 
+    </div> 
+<% end %>
 
-<% end %>   <br> 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- hrsurvival v2 -2 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2109246747658646"
-         data-ad-slot="6007922817"
-         data-ad-format="auto"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
-  <%= render partial: 'footer/footer' %>
+
 
 

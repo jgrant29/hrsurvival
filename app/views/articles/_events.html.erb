@@ -1,0 +1,22 @@
+<% @articles.where(webinars_events: true).in_groups_of(3, false).each do |webinars| %>
+  <div class="row">
+  <% webinars.each do |events| %>
+      <div class="col-md-4">
+        <h3><%= link_to events.title, events %></h3>
+        <i>Published <%= events.created_at.strftime("%B %dth %Y") %></i>
+        <p><%= simple_format events.body[0...300] %></p>
+        <div>
+          <%= link_to "Read more", events%>
+        </div>
+        <% if policy(@articles).update? %>
+          <div>
+            <%= link_to 'Edit', edit_article_path(events) %>
+          </div>
+          <div>
+            <%= link_to 'Destroy', events, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div> <!-- end of destory button -->
+        <% end %> <!-- end of policy -->
+      </div> <!-- col-md-4 -->
+    <% end %>  
+  </div>
+<% end %>

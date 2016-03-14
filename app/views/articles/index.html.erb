@@ -1,64 +1,91 @@
 
 <div class="container">
-<% if policy(Article.new).create? %>
-  <br><%= link_to 'New Article', new_article_path %>
-<% end %>
+  <% if policy(Article.new).create? %>
+    <br><%= link_to 'New Article', new_article_path %>
+  <% end %>
 
 <br><h1>Blog</h1>
-  <ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="articles">All</a></li>
-  <li role="presentation"><a href="articles/_hiring">Hiring</a></li>
-  <li role="presentation"><a href="#">Firing</a></li>
-  <li role="presentation"><a href="#">Reads</a></li>
-  <li role="presentation"><a href="#">Holiday</a></li>
-  <li role="presentation"><a href="#">Forms</a></li>
-  <li role="presentation"><a href="#">ADA/FMLA</a></li>
-  <li role="presentation"><a href="#">Management</a></li>
-  <li role="presentation"><a href="#">OSHA</a></li>
-  <li role="presentation"><a href="#">Wages</a></li>
-  <li role="presentation"><a href="#">Events</a></li>
-</ul>
-  <hr>
-<div class="google-adsense-blog">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- hrsurvival v2 -2 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2109246747658646"
-         data-ad-slot="6007922817"
-         data-ad-format="auto"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-<% @articles.in_groups_of(3, false).each do |group| %>
-  <div class="row">
-    <% group.each do |articles| %>
-    <div class="col-md-4">
-      <h3><%= link_to articles.title, articles %></h3>
-      <i>Published <%= articles.created_at.strftime("%B %dth %Y") %></i>
-      <p><%= simple_format articles.body[0...300] %></p>
-      <div><%= link_to "Read more", articles%></div>
-        <% if policy(@articles).update? %>
-          <div><%= link_to 'Edit', edit_article_path(articles) %></div>
-          <div><%= link_to 'Destroy', articles, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-        <% end %>
-    </div>
-    <% end %>
-  </div>
+   <div class="row">
+     <div class="tabbable tabs-left">
+       <ul class="nav nav-pills">
+        <li class="active"><a href="#all" data-toggle="tab">All</a></li>
+        <li><a href="#hiring" data-toggle="tab">Hiring</a></li>
+        <li><a href="#firing" data-toggle="tab">Firing</a></li>
+        <li><a href="#wages" data-toggle="tab">Wages</a></li>
+        <li><a href="#reads" data-toggle="tab">Reads</a></li>
+        <li><a href="#holidays" data-toggle="tab">Holidays</a></li>
+        <li><a href="#forms" data-toggle="tab">Forms</a></li>
+        <li><a href="#leave_disability" data-toggle="tab">ADA/FMLA</a></li>
+        <li><a href="#management" data-toggle="tab">Management</a></li>
+        <li><a href="#safety_health" data-toggle="tab">OSHA</a></li>
+        <li><a href="#webinars_events" data-toggle="tab">Events</a></li>
+        <li><a href="#harassment" data-toggle="tab">Harassment</a></li>
+       </ul><hr>
 
-<% end %>   <br> 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- hrsurvival v2 -2 -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2109246747658646"
-         data-ad-slot="6007922817"
-         data-ad-format="auto"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- hrsurvival v2 -2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2109246747658646"
+             data-ad-slot="6007922817"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+       <div class="tab-content">
+         <div class="tab-pane fade in active" id="all">
+           <%= render 'all' %>
+         </div>
+         <div class="tab-pane fade" id="hiring">
+           <%= render 'hiring' %>
+         </div>
+         <div class="tab-pane fade" id="firing">
+           <%= render 'firing' %>
+         </div>    
+         <div class="tab-pane fade" id="wages">
+           <%= render 'wages' %>
+         </div>   
+         <div class="tab-pane fade" id="reads">
+           <%= render 'read' %>
+         </div>
+         <div class="tab-pane fade" id="holidays">
+           <%= render 'holidays' %>
+         </div>
+         <div class="tab-pane fade" id="forms">
+           <%= render 'forms' %>
+         </div>
+         <div class="tab-pane fade" id="leave_disability">
+           <%= render 'leave' %>
+         </div>            
+         <div class="tab-pane fade" id="management">
+           <%= render 'management' %>
+         </div>            
+         <div class="tab-pane fade" id="safety_health">
+           <%= render 'osha' %>
+         </div>            
+         <div class="tab-pane fade" id="webinars_events">
+           <%= render 'events' %>
+         </div>            
+         <div class="tab-pane fade" id="harassment">
+           <%= render 'harassment' %>
+         </div>                                       
+       </div>
+     </div>
+   </div><br>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- hrsurvival v2 -2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2109246747658646"
+             data-ad-slot="6007922817"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
 </div>
-  <%= render partial: 'footer/footer' %>
+
+<%= render partial: 'footer/footer' %>
 
 

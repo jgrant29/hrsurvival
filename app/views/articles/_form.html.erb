@@ -76,13 +76,6 @@
           </div>
           <div class="col-md-2 col-sm-3 col-xs-6">
             <div class="form-group">
-              <%= a.label :performance, class: "checkbox" do %>
-              <%= a.check_box :performance %> Performance?
-              <% end %>
-            </div>
-          </div>
-          <div class="col-md-2 col-sm-3 col-xs-6">
-            <div class="form-group">
               <%= a.label :safety_health, class: "checkbox" do %>
               <%= a.check_box :safety_health %> Safety/Health?
               <% end %>
@@ -104,7 +97,7 @@
           </div>
           <div class="col-md-2 col-sm-3 col-xs-6">
             <div class="form-group">
-              <%= a.label :harrassment, class: "checkbox" do %>
+              <%= a.label "harassment", class: "checkbox" do %>
               <%= a.check_box :harrassment %> Harrassment?
               <% end %>
             </div>

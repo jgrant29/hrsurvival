@@ -1,0 +1,24 @@
+<% @articles.where(good_read: true).in_groups_of(3, false).each do |read| %>
+  <div class="row">
+  <% read.each do |good| %>
+      <div class="col-md-4">
+        <h3><%= link_to good.title, good %></h3>
+        <i>Published <%= good.created_at.strftime("%B %dth %Y") %></i>
+        <p><%= simple_format good.body[0...300] %></p>
+        <div>
+          <%= link_to "Read more", good%>
+        </div>
+        <% if policy(@articles).update? %>
+          <div>
+            <%= link_to 'Edit', edit_article_path(good) %>
+          </div>
+          <div>
+            <%= link_to 'Destroy', good, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div> <!-- end of destory button -->
+        <% end %> <!-- end of policy -->
+      </div> <!-- col-md-4 -->
+    <% end %>  
+  </div>
+<% end %>
+
+

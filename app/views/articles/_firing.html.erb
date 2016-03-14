@@ -1,0 +1,28 @@
+<% @articles.where(firing: true).in_groups_of(3, false).each do |hot| %>
+  <div class="row">
+    <% hot.each do |hotfiring| %>
+      <% if hotfiring.firing? == true %>
+        <div class="col-md-4">
+          <h3><%= link_to hotfiring.title, hotfiring %></h3>
+          <i>Published <%= hotfiring.created_at.strftime("%B %dth %Y") %></i>
+          <p><%= simple_format hotfiring.body[0...300] %></p>
+          <div>
+            <%= link_to "Read more", hotfiring%>
+          </div>
+          <% if policy(@articles).update? %>
+            <div>
+              <%= link_to 'Edit', edit_article_path(hotfiring) %>
+            </div>
+            <div>
+              <%= link_to 'Destroy', hotfiring, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div> <!-- end of destory button -->
+          <% end %> <!-- end of policy -->
+        </div> <!-- col-md-4 -->
+      <% end %>  
+    <% end %>
+  </div>
+<% end %>
+
+
+
+

@@ -1,0 +1,24 @@
+<% @articles.where(holidays_vacations: true).in_groups_of(3, false).each do |holiday| %>
+  <div class="row">
+  <% holiday.each do |vacation| %>
+      <div class="col-md-4">
+        <h3><%= link_to vacation.title, vacation %></h3>
+        <i>Published <%= vacation.created_at.strftime("%B %dth %Y") %></i>
+        <p><%= simple_format vacation.body[0...300] %></p>
+        <div>
+          <%= link_to "Read more", vacation%>
+        </div>
+        <% if policy(@articles).update? %>
+          <div>
+            <%= link_to 'Edit', edit_article_path(vacation) %>
+          </div>
+          <div>
+            <%= link_to 'Destroy', vacation, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div> <!-- end of destory button -->
+        <% end %> <!-- end of policy -->
+      </div> <!-- col-md-4 -->
+    <% end %>  
+  </div>
+<% end %>
+
+
