@@ -77,7 +77,7 @@ class TableofcontentsController < ApplicationController
     @tableofcontent = @chapter.tableofcontents.find(params[:id])
     @tableofcontent.destroy
     respond_to do |format|
-      format.html { redirect_to [@book, @chapter], notice: 'Tableofcontent was successfully destroyed.' }
+      format.html { redirect_to [@book], notice: 'Tableofcontent was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

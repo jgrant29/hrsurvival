@@ -74,10 +74,12 @@ class ChaptersController < ApplicationController
   # DELETE /chapters/1.json
   def destroy
     @book = Book.find(params[:book_id])
+        @chapter = Chapter.find(params[:id])
+
     @chapter.destroy
     authorize @chapter
     respond_to do |format|
-      format.html { redirect_to @chapter.book, notice: 'Chapter was successfully destroyed.' }
+      format.html { redirect_to [@book], notice: 'Chapter was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
