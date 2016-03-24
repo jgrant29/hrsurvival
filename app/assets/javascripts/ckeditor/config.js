@@ -32,6 +32,8 @@ CKEDITOR.editorConfig = function( config )
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
 
   config.allowedContent = true;
+  config.extraAllowedContent = 'span;ul;li;table;td;style;*[id];*(*);*{*}';
+  config.ignoreEmptyParagraph = false;
 
   // Toolbar groups configuration.
   config.toolbar = [

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width-device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
   <%= csrf_meta_tags %>
     
 
@@ -30,10 +31,9 @@
           <li><a href="/books/1">Topics</a></li>
           <li><a href="/articles">Articles</a></li>
           <li><a href="/welocome/index">Sign up</a></li>
-          <li>
-            <% if current_user %>
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-             <% end %>
+          <% if current_user %>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+           <% end %>
        </ul>
         <%= render partial: 'searches/form' %>
       </div><!-- /.navbar-collapse -->

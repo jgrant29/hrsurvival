@@ -1,4 +1,6 @@
-
+table {
+  border: 1px solid #000;
+}
 
 .col-md-9 {
   padding-left: 0;
@@ -29,7 +31,7 @@
   };
 }
 
-@media (max-width: 990px) {
+@media (max-width: 995px) {
   .col-md-3-mobile {
   display: none;
 }
@@ -116,6 +118,10 @@
 }
 
 .toc-body a{
+  text-decoration: none;
+}
+
+.toc-body table{
   text-decoration: none;
 }
 

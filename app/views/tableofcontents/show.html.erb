@@ -96,7 +96,7 @@
       <%= link_to "Delete TOC", [@book, @chapter, @tableofcontent], method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure you want to delete this TOC?" } %>            
       <% end %>
        <div>
-        <%= simple_format @tableofcontent.body %>
+        <%= @tableofcontent.body.html_safe %>
       </div>
       <div><%= render partial: '/emails/blog' %></div><br>
 
