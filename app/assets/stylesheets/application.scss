@@ -114,8 +114,14 @@ a {
   }
 }
 
-.table td {
-   text-align: center;   
+
+td {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+th {
+   text-align: center; 
 }
 
 .btn-default {
