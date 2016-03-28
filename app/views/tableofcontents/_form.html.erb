@@ -15,6 +15,10 @@
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "form-control", placeholder: "Enter the title of this table of content" %>
   </div><br>
+  <div class="field-group">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight, class: "form-control input-sm", placeholder: "Enter the weight of toc to sort e.g. 1" %>
+  </div><br>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description, class: "form-control", placeholder: "Enter the description of this table of content" %>

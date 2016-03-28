@@ -23,18 +23,22 @@ table {
 }
 
 .panel-title {
-  font-size: 1.5rem;
-  margin-left: 25px;
+  font-size: 1.2rem;
+  margin-left: 5px;
   font-weight: 200;
-  &:hover {
-    text-decoration: underline;
-  };
+
+    &:hover {
+      text-decoration: underline;
+      .glyphicon-plus {
+        color: #074792;
+      }
+    }
 }
 
 @media (max-width: 995px) {
   .col-md-3-mobile {
-  display: none;
-}
+    display: none;
+  }
 }
 
 .col-md-3 {
@@ -247,8 +251,9 @@ a {
   font-weight: 200px;
 }
 .glyphicon-plus {
-  margin-top: 7px;
-  font-size: 10px !important;
+  margin-top: 4px;
+  font-size: 14px !important;
+  color: #f1f1f1;
   float: right;
 }
 

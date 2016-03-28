@@ -56,7 +56,7 @@ class ChaptersController < ApplicationController
   # PATCH/PUT /chapters/1.json
   def update
     @book = Book.find(params[:book_id])
-    @chapter = Chapter.new(chapter_params)
+    @chapter = Chapter.find(params[:id])
     @chapter.book = @book
     authorize @chapter
     respond_to do |format|
@@ -92,6 +92,6 @@ class ChaptersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chapter_params
-      params.require(:chapter).permit(:title, :body, :published, :public, :author, :book_id, :tableofcontent_id)
+      params.require(:chapter).permit(:title, :body, :published, :public, :author, :book_id, :tableofcontent_id, :weight)
     end
 end
