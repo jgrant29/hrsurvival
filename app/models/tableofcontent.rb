@@ -6,7 +6,7 @@ class Tableofcontent < ActiveRecord::Base
   has_many :emails
 
 
-  default_scope { order('title ASC') }
+  default_scope { order('weight ASC') }
 
   after_create :send_toc_new_notifications!
   after_update :send_toc_update_notifications!
