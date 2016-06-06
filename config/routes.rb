@@ -33,8 +33,6 @@ Rails.application.routes.draw do
 
   get 'welocome/about'
 
-  get 'welocome/about'
-
   root to: 'welocome#index'
 
 

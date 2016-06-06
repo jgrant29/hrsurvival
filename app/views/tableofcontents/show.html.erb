@@ -1,7 +1,7 @@
 
   <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 col-md-3-overflow">
     <div class="book-title text-center"><%= @book.title %></div>
     <div class="author-avatar text-center">
       <%= image_tag(@book.avatar.url) %>
@@ -38,7 +38,6 @@
     </div>
     </div>
     <div class="col-md-3-mobile">
-
     <% @book.chapters.each do |chapter| %>
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
@@ -121,17 +120,8 @@
 
 <script>
   $(document).ready(function(){
-    // set params to equal a Decoded URI Component (decodeURICompent is a javascript 
-    // function used to decode URIs with special characters i.e. ? / % & and so forth)
-    // window.location.search brings you the entire URI up to the search "?" part of the component
-    // (1) brings you to the next element after the search "?".
-    // .spit is a jquery method that splits the URI before and after the equal sign
     params = decodeURIComponent(window.location.search.substring(1)).split("=")
-
-    // below we ask if the first param is equal to "chapter_title" (we set this path in the collapse method in bootstrap's, javascript collapse method in the latter part of the tableofcontent show.html.erb)
     if(params[0] == "chapter_title"){
-      // if params equals chapter_title we then paste the current path to the decodeURIComponent within javascript's collapse method
-      // then we ask the function to use jquery's show method on the collapse method
       $("#" + params[1] ).collapse('show');
     }
   })

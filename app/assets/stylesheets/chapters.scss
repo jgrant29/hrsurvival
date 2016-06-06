@@ -262,3 +262,8 @@ a {
     font-size: 19px !important;
     float: right;
 }
+
+.col-md-3-overflow {
+  overflow-y: scroll;
+  height: 90vh !important;
+}
