@@ -37,13 +37,6 @@ tableofcontents = Tableofcontent.all
 end
 Articles = Article.all
 
-admin = User.new(
-    email: 'justin@accr.biz',
-    password: 'dirtbag7!',
-    role: 'admin'
-    )
-admin.skip_confirmation!
-admin.save!
 
 puts "Seed Finished"
 puts "#{Book.count} books created"
