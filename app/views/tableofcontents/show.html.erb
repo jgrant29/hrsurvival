@@ -43,7 +43,9 @@
               <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                   <a role="button" data-toggle="collapse" data-parent="#accordion" href="#<%= chapter.id %>" aria-expanded="false" aria-controls="<%= chapter.id %>">
-                    <%= chapter.title %>
+                    <div class="title-scroll">
+                      <%= chapter.title %>
+                    </div>
                     <span class="glyphicon glyphicon-plus"></span>
                   </a>
                 </h4>
@@ -86,7 +88,7 @@
       <h1 class="toc-title"><%= @tableofcontent.title %></h1>
       <div class="media">
         <div class="media-body toc-body"> 
-          <small>Authored about <%= time_ago_in_words(@tableofcontent.created_at) %> ago by <%= link_to @book.author, @book.websiteurl %></small> 
+          <small>Authored about <%= time_ago_in_words(@tableofcontent.created_at) %> ago by <%= link_to @book.author, @book.websiteurl %></small> <br>
           <% if policy(@chapter).update? %>
             <%= link_to "Edit Book", edit_book_path(@book), class: 'btn btn-primary' %>
             <%= link_to "Edit Chapter", edit_book_chapter_path(@book, @chapter), class: 'btn btn-primary' %>
@@ -107,7 +109,15 @@
 <%= render partial: 'footer/footer' %>
 
 <script>
-  $(window).load(function(){
+   $(window).load(function(){
+     $('.col-md-3').stop().animate({
+        scrollTop: $(".title-scroll").offset().top
+      }, 1000);
+    });
+</script>
+
+<script>
+  $(document).ready(function(){
     params = decodeURIComponent(window.location.search.substring(1)).split("=")
     if(params[0] == "chapter_title"){
       $("#" + params[1] ).collapse('show');
@@ -115,15 +125,8 @@
   });
 </script>
 
-<script>
-  $(window).load(function(){
-      $('.col-md-3').animate({
-        scrollTop: $(".panel-title").offset().top
-      }, 1000);
-    });
-</script>
 <script> 
-  $(window).load(function(){
+  $(document).ready(function(){
     var params = decodeURIComponent(window.location.search.substring(1)).split("=")
     if(params[0] == "chapter_title") {
       $("#" + params[1]).addClass("selected");

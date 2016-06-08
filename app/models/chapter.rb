@@ -1,6 +1,6 @@
 class Chapter < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title
   belongs_to :book
   has_many :tableofcontents, dependent: :destroy
 

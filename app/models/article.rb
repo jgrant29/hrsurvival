@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title
 
   searchkick word_start: [:title, :body], highlight: [:body]
   mount_uploader :blogpicture, BlogpictureUploader
