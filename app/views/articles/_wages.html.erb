@@ -4,7 +4,7 @@
     <% if wage.wages? %>
       <div class="col-md-4">
         <h3><%= link_to wage.title, wage %></h3>
-        <i>Published <%= wage.created_at.strftime("%B %dth %Y") %></i>
+        <small>Published about <%= time_ago_in_words(wage.created_at) %> ago</small>
         <p><%= simple_format wage.body[0...300] %></p>
         <div>
           <%= link_to "Read more", wage%>

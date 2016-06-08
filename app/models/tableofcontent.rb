@@ -1,4 +1,6 @@
 class Tableofcontent < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
   searchkick word_start: [:title, :body], highlight: [:body]
   belongs_to :chapter  
   belongs_to :book

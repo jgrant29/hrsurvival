@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160409210012) do
+ActiveRecord::Schema.define(version: 20160608184103) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,10 @@ ActiveRecord::Schema.define(version: 20160409210012) do
     t.boolean  "wages"
     t.boolean  "webinars_events"
     t.boolean  "harrassment"
+    t.string   "slug"
   end
+
+  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -58,7 +61,10 @@ ActiveRecord::Schema.define(version: 20160409210012) do
     t.string   "linkedin"
     t.string   "websiteurl"
     t.string   "websitename"
+    t.string   "slug"
   end
+
+  add_index "books", ["slug"], name: "index_books_on_slug", using: :btree
 
   create_table "chapters", force: :cascade do |t|
     t.string   "title"
@@ -71,9 +77,11 @@ ActiveRecord::Schema.define(version: 20160409210012) do
     t.integer  "book_id"
     t.string   "description"
     t.integer  "weight"
+    t.string   "slug"
   end
 
   add_index "chapters", ["book_id"], name: "index_chapters_on_book_id", using: :btree
+  add_index "chapters", ["slug"], name: "index_chapters_on_slug", using: :btree
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
@@ -112,6 +120,19 @@ ActiveRecord::Schema.define(version: 20160409210012) do
   add_index "favorites", ["tableofcontent_id"], name: "index_favorites_on_tableofcontent_id", using: :btree
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
   create_table "tableofcontents", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
@@ -124,10 +145,12 @@ ActiveRecord::Schema.define(version: 20160409210012) do
     t.integer  "book_id"
     t.integer  "weight"
     t.binary   "text"
+    t.string   "slug"
   end
 
   add_index "tableofcontents", ["book_id"], name: "index_tableofcontents_on_book_id", using: :btree
   add_index "tableofcontents", ["chapter_id"], name: "index_tableofcontents_on_chapter_id", using: :btree
+  add_index "tableofcontents", ["slug"], name: "index_tableofcontents_on_slug", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

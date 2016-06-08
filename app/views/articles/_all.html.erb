@@ -3,7 +3,7 @@
   <% all.each do |show| %>
     <div class="col-md-4">
       <h3><%= link_to show.title[0...50], show %></h3>
-      <i>Published <%= show.created_at.strftime("%B %dth %Y") %></i>
+      <small>Published about <%= time_ago_in_words(show.created_at) %> ago</small>
       <p><%= simple_format show.body[0...300] %></p>
       <div>
         <%= link_to "Read more", show%>

@@ -5,39 +5,39 @@ class TableofcontentsController < ApplicationController
   # GET /tableofcontents.json
   def index
     @email = Email.new
-    @tableofcontents = Tableofcontent.all
-    @book = Book.find(params[:book_id])
-    @chapter = Chapter.find(params[:chapter_id])
+    @tableofcontents = Tableofcontent.friendly.all
+    @book = Book.friendly.find(params[:book_id])
+    @chapter = Chapter.friendly.find(params[:chapter_id])
   end
 
   # GET /tableofcontents/1
   # GET /tableofcontents/1.json
   def show
     @email = Email.new
-    @book = Book.find(params[:book_id])
-    @chapter = Chapter.find(params[:chapter_id])
-    @tableofcontent = Tableofcontent.find(params[:id])
+    @book = Book.friendly.find(params[:book_id])
+    @chapter = Chapter.friendly.find(params[:chapter_id])
+    @tableofcontent = Tableofcontent.friendly.find(params[:id])
 
   end
 
   # GET /tableofcontents/new
   def new
-    @book = Book.find(params[:book_id])
-    @chapter = Chapter.find(params[:chapter_id])
+    @book = Book.friendly.find(params[:book_id])
+    @chapter = Chapter.friendly.find(params[:chapter_id])
     @tableofcontent = Tableofcontent.new
   end
 
   # GET /tableofcontents/1/edit
   def edit
-    @book = Book.find(params[:book_id])
-    @chapter = Chapter.find(params[:chapter_id])
+    @book = Book.friendly.find(params[:book_id])
+    @chapter = Chapter.friendly.find(params[:chapter_id])
   end
 
   # POST /tableofcontents
   # POST /tableofcontents.json
   def create
-    @book = Book.find(params[:book_id])
-    @chapter = Chapter.find(params[:chapter_id])
+    @book = Book.friendly.find(params[:book_id])
+    @chapter = Chapter.friendly.find(params[:chapter_id])
     @tableofcontent = Tableofcontent.new(tableofcontent_params)
     @tableofcontent.chapter = @chapter
 
@@ -55,9 +55,9 @@ class TableofcontentsController < ApplicationController
   # PATCH/PUT /tableofcontents/1
   # PATCH/PUT /tableofcontents/1.json
   def update
-    @book = Book.find(params[:book_id])
-    @chapter = Chapter.find(params[:chapter_id])
-    @tableofcontent = Tableofcontent.find(params[:id])
+    @book = Book.friendly.find(params[:book_id])
+    @chapter = Chapter.friendly.find(params[:chapter_id])
+    @tableofcontent = Tableofcontent.friendly.find(params[:id])
     respond_to do |format|
       if @tableofcontent.update(tableofcontent_params)
         format.html { redirect_to [@book, @chapter, @tableofcontent], notice: 'Tableofcontent was successfully updated.' }
@@ -72,9 +72,9 @@ class TableofcontentsController < ApplicationController
   # DELETE /tableofcontents/1
   # DELETE /tableofcontents/1.json
   def destroy
-    @book = Book.find(params[:book_id])
-    @chapter = @book.chapters.find(params[:chapter_id])
-    @tableofcontent = @chapter.tableofcontents.find(params[:id])
+    @book = Book.friendly.find(params[:book_id])
+    @chapter = @book.chapters.friendly.find(params[:chapter_id])
+    @tableofcontent = @chapter.tableofcontents.friendly.find(params[:id])
     @tableofcontent.destroy
     respond_to do |format|
       format.html { redirect_to [@book], notice: 'Tableofcontent was successfully destroyed.' }
@@ -85,7 +85,7 @@ class TableofcontentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tableofcontent
-      @tableofcontent = Tableofcontent.find(params[:id])
+      @tableofcontent = Tableofcontent.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

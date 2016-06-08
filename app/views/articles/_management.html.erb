@@ -3,7 +3,7 @@
   <% management.each do |performance| %>
       <div class="col-md-4">
         <h3><%= link_to performance.title, performance %></h3>
-        <i>Published <%= performance.created_at.strftime("%B %dth %Y") %></i>
+        <small>Published about <%= time_ago_in_words(performance.created_at) %> ago</small>
         <p><%= simple_format performance.body[0...300] %></p>
         <div>
           <%= link_to "Read more", performance%>

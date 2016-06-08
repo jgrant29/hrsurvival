@@ -46,11 +46,12 @@
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
       <div class="toc-body">
-        <h1><%= @article.title %></h1><hr>
-          <i>Published <%= @article.created_at.strftime("%B %dth %Y") %></i><br>
+        <h1><%= @article.title %></h1>
+        <small>Published about <%= time_ago_in_words(@article.created_at) %> ago</small><br>
+
         <% if policy(@articles).update? %>
           <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %>
-        <% end %>
+        <% end %><hr>
         
         <%= render partial: 'share_buttons/share_articles.html.erb' %>
 

@@ -3,7 +3,7 @@
   <% safety.each do |health| %>
       <div class="col-md-4">
         <h3><%= link_to health.title, health %></h3>
-        <i>Published <%= health.created_at.strftime("%B %dth %Y") %></i>
+      <small>Published about <%= time_ago_in_words(health.created_at) %> ago</small>
         <p><%= simple_format health.body[0...300] %></p>
         <div>
           <%= link_to "Read more", health%>

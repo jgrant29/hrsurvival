@@ -3,7 +3,7 @@
   <% leave.each do |disability| %>
       <div class="col-md-4">
         <h3><%= link_to disability.title, disability %></h3>
-        <i>Published <%= disability.created_at.strftime("%B %dth %Y") %></i>
+          <small>Published about <%= time_ago_in_words(disability.created_at) %> ago</small>
         <p><%= simple_format disability.body[0...300] %></p>
         <div>
           <%= link_to "Read more", disability%>

@@ -26,7 +26,7 @@ gem "font-ionicons-rails"
 gem "font-awesome-rails"
 gem 'kaminari'
 gem 'social-share-button'
-
+gem 'friendly_id', '~> 5.1.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

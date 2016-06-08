@@ -29,9 +29,12 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  get 'welocome/index'
+
+  resources :welocomes
 
   get 'welocome/about'
+
+  get 'welocome/index'
 
   root to: 'welocome#index'
 

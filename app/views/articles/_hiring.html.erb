@@ -3,7 +3,7 @@
   <% hires.each do |hire| %>
       <div class="col-md-4 length">
         <h3><%= link_to hire.title, hire %></h3>
-        <i>Published <%= hire.created_at.strftime("%B %dth %Y") %></i>
+        <small>Published about <%= time_ago_in_words(hire.created_at) %> ago</small>
         <p><%= simple_format hire.body[0...300] %></p>
         <div>
           <%= link_to "Read more", hire%>

@@ -11,15 +11,15 @@ class ChaptersController < ApplicationController
   # GET /chapters/1
   # GET /chapters/1.json
   def show
-    @chapter = Chapter.find(params[:id])
-    @book = Book.find(params[:book_id])
+    @chapter = Chapter.friendly.find(params[:id])
+    @book = Book.friendly.find(params[:book_id])
     @chapter.book = @book
     authorize @chapter
   end
 
   # GET /chapters/new
   def new
-    @book = Book.find(params[:book_id])
+    @book = Book.friendly.find(params[:book_id])
     @chapter = Chapter.new
     @tableofcontent = Tableofcontent.new
     authorize @chapter
@@ -27,15 +27,15 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/1/edit
   def edit
-    @book = Book.find(params[:book_id])
-    @chapter = Chapter.find(params[:id])
+    @book = Book.friendly.find(params[:book_id])
+    @chapter = Chapter.friendly.find(params[:id])
     authorize @chapter
   end
 
   # POST /chapters
   # POST /chapters.json
   def create
-    @book = Book.find(params[:book_id])
+    @book = Book.friendly.find(params[:book_id])
     @chapter = Chapter.new(chapter_params)
     @tableofcontent = Tableofcontent.new
     @chapter.book = @book
@@ -55,8 +55,8 @@ class ChaptersController < ApplicationController
   # PATCH/PUT /chapters/1
   # PATCH/PUT /chapters/1.json
   def update
-    @book = Book.find(params[:book_id])
-    @chapter = Chapter.find(params[:id])
+    @book = Book.friendly.find(params[:book_id])
+    @chapter = Chapter.friendly.find(params[:id])
     @chapter.book = @book
     authorize @chapter
     respond_to do |format|
@@ -73,8 +73,8 @@ class ChaptersController < ApplicationController
   # DELETE /chapters/1
   # DELETE /chapters/1.json
   def destroy
-    @book = Book.find(params[:book_id])
-        @chapter = Chapter.find(params[:id])
+    @book = Book.friendly.find(params[:book_id])
+        @chapter = Chapter.friendly.find(params[:id])
 
     @chapter.destroy
     authorize @chapter
@@ -87,7 +87,7 @@ class ChaptersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chapter
-      @chapter = Chapter.find(params[:id])
+      @chapter = Chapter.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
