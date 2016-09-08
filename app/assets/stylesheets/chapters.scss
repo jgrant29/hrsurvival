@@ -282,7 +282,7 @@ a {
   font-weight: 200px;
 }
 .glyphicon-plus {
-  margin-top: 4px;
+  margin-top: -18px;
   font-size: 14px !important;
   color: #f1f1f1;
   float: right;
@@ -297,14 +297,11 @@ a {
 .col-md-3-overflow {
   overflow-y: scroll;
   height: 90vh;
-  
-
   @media (max-width: 995px) {
     display: none !important;
     overflow-y: none;
     height: 0px;
   }
-
 }
 
 .selected{

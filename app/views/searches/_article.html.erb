@@ -1,6 +1,6 @@
 <% @article_searches.with_details.each do |article_search, details| %>
   <% if article_search.class == Article %>
     <h3><%= link_to article_search.title, article_search, class: "search-title" %></h3>
-    <div class="search-results-filter"><%= simple_format word_wrap details[:highlight][:body], class: "search-results-filter" %></div><hr>
+    <div class="search-results-filter"><%= simple_format details[:highlight][:body], class: "search-results-filter" %></div><hr>
     <% end %>
   <% end %>
