@@ -1,6 +1,11 @@
-<% @article_searches.with_details.each do |article_search, details| %>
-  <% if article_search.class == Article %>
-    <h3><%= link_to article_search.title, article_search, class: "search-title" %></h3>
-    <div class="search-results-filter"><%= simple_format details[:highlight][:body], class: "search-results-filter" %></div><hr>
+<% if @article_searches != nil %>
+  <% @article_searches.with_details.each do |article_search, details| %>
+    <% if article_search.class == Article %>
+      <h3><%= link_to article_search.title, article_search, class: "search-title" %></h3>
+      <div class="search-results-filter"><%= simple_format details[:highlight][:body], class: "search-results-filter" %>
+      </div><hr>
     <% end %>
   <% end %>
+<% else %>
+  <p>We could not find anything relating to your search.  Please try again or check spelling.</p>
+<% end %>
