@@ -1,3 +1,25 @@
+.book-image {
+  position: relative;
+  background-image: image_url("virginia-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 435px;
+}
+
+.book-image-1 {
+  opacity: .9;
+  height: 100%;
+  padding-top: 45px;
+  padding-bottom: 40px;
+  color: #0074D9;
+  h1 {
+    text-shadow: 2px 1px #DDDDDD;
+    font-weight: 300;
+  }
+  border-bottom: 10px solid #0074D9;
+  margin-bottom: 0px !important;
+}
 
 .book-page-header {
   height: 12rem;

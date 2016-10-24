@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'new_welcome/index'
+
   resources :articles
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -36,7 +38,7 @@ Rails.application.routes.draw do
 
   get 'welocome/index'
 
-  root to: 'welocome#index'
+  root to: 'new_welcome#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

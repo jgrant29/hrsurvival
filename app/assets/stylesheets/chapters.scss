@@ -2,24 +2,14 @@ table {
   border: 1px solid #000;
 }
 
-.col-md-9 {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.col-md-3{
-  padding-left: 0;
-  padding-right: 0;
+.chapter-show {
+  margin-top: 70px;
 }
 
 .collapse-box  {
     border: 1px solid #ddd;
     background-color: #f5f5f5;
     border-radius: 10px;
-}
-
-.panel-group{
-
 }
 
 .panel-title {
@@ -60,7 +50,6 @@ table {
 
 .col-md-3 {
   margin-top: 10px;
-  background-color: #f5f5f5;
 }
 
 .col-md-2 {
@@ -82,13 +71,11 @@ table {
 
 .panel-group {
   margin-bottom: 0px;
-  color: #fff;
   border: none;
 }
 
 .panel-default {
   border: 0px;
-  color: #fff;
 }
 
 .chapter-page-header {
@@ -106,7 +93,6 @@ table {
 .chapter-page-title {
   padding-top: 1rem;
   border-size: border-box;
-  color: #fff;
   text-decoration: underline !important;
 }
 

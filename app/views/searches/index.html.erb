@@ -1,26 +1,24 @@
 <div class="container search-body"><br>
   <div class="row">
     <h1>Results</h1>
-        <p><%= @results.total_count %> different results for "<strong><%= params[:query] %></strong>" found in about <%= @results.took %> milliseconds<hr>
-      <div class="col-md-8">
+    <p><%= @results.total_count %> different results for "<strong><%= params[:query] %></strong>" found in about <%= @results.took %> milliseconds<hr>
+    <div class="col-md-8">
       <%= render 'toc' %>
-      <%= render "article" %>
-
-      </div>
-      <div class="col-md-4">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- hrsurvival v2 -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2109246747658646"
-             data-ad-slot="3005377619"
-             data-ad-format="auto"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
     </div>
-<%= paginate @tableofcontent_searches && @article_searches%>
+    <div class="col-md-4">
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- hrsurvival v2 -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-2109246747658646"
+           data-ad-slot="3005377619"
+           data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+  <%= paginate @tableofcontent_searches && @article_searches%>
 </div>
           
 

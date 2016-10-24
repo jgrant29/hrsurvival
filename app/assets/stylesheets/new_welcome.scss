@@ -1,0 +1,106 @@
+.new-welcome-image {
+  position: relative;
+  background-image: image_url("books.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 530px;
+}
+.new-welcome-1 {
+  opacity: .9;
+  height: 100%;
+  padding-top: 90px;
+  padding-bottom: 40px;
+  color: #0074D9;
+  h1 {
+    text-shadow: 2px 1px #DDDDDD;
+    font-weight: 300;
+  }
+  border-bottom: 10px solid #0074D9;
+  margin-bottom: 0px !important;
+}
+
+hr.yellow-line {
+  border-color: #FFDC00;
+}
+
+hr.style18 { 
+  height: 30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+} 
+hr.style18:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  margin-bottom: 0px;
+  border-style: solid; 
+  border-color: #0074D9; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px; 
+}
+
+.grey {
+  color: #777777;
+}
+
+.jumbotron {
+  background-color: #FFFFFF !important;
+}
+
+.dark-blue {
+  color: #001f3f
+}
+
+.i {
+  padding-top: 40px;
+  padding-bottom: 120px;
+  background-color: #001f3f;
+  color: #FFFFFF !important;
+  border-bottom: 10px solid #DDDDDD;
+  a {
+    cursor: pointer;
+    color: #FFFFFF !important;
+    &:hover {
+      color: #FFDC00 !important;
+    }
+  }
+}
+
+.andrew {
+  img {
+    width: 100%;
+  }
+}
+
+.about-andrew-i {
+  padding-top: 80px;
+}
+
+.about-andrew-u {
+  margin-top: 35px;
+  line-height: 2;
+  margin-bottom: 100px;
+}
+
+.contact-andrew {
+  margin-top: 45px;
+  color: #0074D9;
+  a {
+    border: 2px solid #0074D9;
+    border-radius: 5px;
+    padding: 15px;
+    &:hover {
+      cursor: pointer;
+      background-color: #0074D9;
+      color: #FFFFFF;
+    };
+  }
+}
+
+.front-page-spacing {
+  padding-top: 80px;
+}

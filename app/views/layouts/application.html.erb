@@ -37,9 +37,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/books/1">Topics</a></li>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Topics <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% @book.chapters.each do |b| %>
+              <li><%= link_to b.title, b.title %></li>
+            <% end %>
+          </ul>
           <li><a href="/articles">Articles</a></li>
-          <li><a href="/">Sign up</a></li>
           <% if current_user %>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
            <% end %>

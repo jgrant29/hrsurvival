@@ -1,29 +1,27 @@
-
+<br>
 <div class="container-fluid">
   <div class="row">
-    <div class="book-image">
-      <div class="col-xs-12 jumbotron book-image-1 text-center">
-        <h1>Virginia Human Resources Library</h1>
-        <p><span class="dark-blue">Developed and updated by Andrew (Andy) T. Wampler at Wilson Worley law firm.</span><p>
-        <br>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- smallest-2 -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:125px;height:125px"
-             data-ad-client="ca-pub-2109246747658646"
-             data-ad-slot="6707820412"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+    <div class="new-welcome-image">
+      <div class="col-xs-12 jumbotron new-welcome-1 text-center">
+          <h1>Virginia Human Resources Manual</h1>
+          <p><span class="dark-blue">Virginia and federal employment law developed and updated by Andrew (Andy) T. Wampler at Wilson Worley law firm.</span><p>
+        <hr class='style18'>
+          <br>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- smallest -->
+          <ins class="adsbygoogle"
+               style="display:inline-block;width:125px;height:125px"
+               data-ad-client="ca-pub-2109246747658646"
+               data-ad-slot="9826397212"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
       </div>
     </div>
     <div class="col-xs-12 i">
       <div class="text-center">
         <h1>Employment Law by Andy Wampler</h1>
-        <% if policy(@book).update? %>
-          <%= link_to "Edit Book", edit_book_path(@book), class: 'btn btn-primary' %>
-          <%= link_to "New Chapter", new_book_chapter_path(@book), class: 'btn btn-primary' %>
-        <% end %>
+        <small><em>His practice includes business advising, healthcare, employment, business and commercial litigation, and class actions.</em></small>
         <hr class="yellow-line">
         <% @book.chapters.in_groups_of(3, false).each do |group| %>
           <% group.each do |t| %>
@@ -97,17 +95,5 @@
           <p>855-477-4675</p>
       </div>
     </div>
-    </div>
   </div>
-
-
-
-
-<script>
-  $(document).ready(function(){
-    params = decodeURIComponent(window.location.search.substring(1)).split("=")
-    if(params[0] == "chapter_title"){
-      $("#" + params[1] ).collapse('show');
-    }
-  })
-</script>
+</div>

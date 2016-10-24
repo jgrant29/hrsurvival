@@ -43,7 +43,7 @@ class TableofcontentsController < ApplicationController
 
     respond_to do |format|
       if @tableofcontent.save
-        format.html { redirect_to [@book, @chapter, @tableofcontent], notice: 'Tableofcontent was successfully created.' }
+        format.html { redirect_to [@book, @chapter], notice: 'Tableofcontent was successfully created.' }
         format.json { render :show, status: :created, location: @tableofcontent }
       else
         format.html { render :new }
@@ -60,7 +60,7 @@ class TableofcontentsController < ApplicationController
     @tableofcontent = Tableofcontent.friendly.find(params[:id])
     respond_to do |format|
       if @tableofcontent.update(tableofcontent_params)
-        format.html { redirect_to [@book, @chapter, @tableofcontent], notice: 'Tableofcontent was successfully updated.' }
+        format.html { redirect_to [@book, @chapter], notice: 'Tableofcontent was successfully updated.' }
         format.json { render :show, status: :ok, location: @tableofcontent }
       else
         format.html { render :edit }
