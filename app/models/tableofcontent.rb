@@ -10,8 +10,8 @@ class Tableofcontent < ActiveRecord::Base
 
   default_scope { order('weight ASC') }
 
-  after_create :send_toc_new_notifications!
-  after_update :send_toc_update_notifications!
+  # after_create :send_toc_new_notifications!
+  # after_update :send_toc_update_notifications!
 
      # def send_toc_update_notifications!
      #  email = Email.where(permissions: true)
