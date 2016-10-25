@@ -2,7 +2,7 @@ class Article < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title
 
-  searchkick word_start: [:title, :body], highlight: [:body]
+  # searchkick word_start: [:title, :body], highlight: [:body]
   mount_uploader :blogpicture, BlogpictureUploader
   has_many :favorites, dependent: :destroy
   has_many :emails
