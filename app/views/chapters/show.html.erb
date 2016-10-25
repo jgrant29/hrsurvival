@@ -10,6 +10,8 @@
       <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
+      <br>
+      <br>
       <% @book.chapters.each do |chapter| %>
         <p><%= link_to chapter.title, [@book, chapter] %></p>
       <% end %>
@@ -18,7 +20,7 @@
       <div class="col-sx-3 col-sm-9 col-md-9 col-lg-9 chapter-col">
         <div class="media">
           <div class="media-body"> 
-            <h1><%= @chapter.title %> <small>Authored by <%= link_to @book.author, @book.websiteurl %></h1>     
+            <h1><%= @chapter.title %><br> <small>Authored by <%= link_to @book.author, @book.websiteurl %></h1>     
             <% if policy(@chapter).update? %>
               <%= link_to "Edit Chapter", edit_book_chapter_path, class: 'btn btn-primary' %>
               <%= link_to "New TOC", new_book_chapter_tableofcontent_path(@book, @chapter, @tableofcontent), class: 'btn btn-success' %>
