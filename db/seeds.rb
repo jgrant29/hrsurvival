@@ -1,4 +1,4 @@
-require 'faker'
+prequire 'faker'
 
 # Create Book
 
