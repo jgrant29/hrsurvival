@@ -14,6 +14,7 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.friendly.find(params[:id])
     @book = Book.friendly.find(params[:book_id])
     @chapter.book = @book
+    meta_tag
     authorize @chapter
   end
 
@@ -82,6 +83,13 @@ class ChaptersController < ApplicationController
       format.html { redirect_to [@book], notice: 'Chapter was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def meta_tag
+    set_meta_tags title: @chapter.title,
+                  description: @chapter.body,
+                  keywords: @chapter.title,
+                  author: "Andrew (Andy) Wampler with Wilson Worley Law Firm"
   end
 
   private

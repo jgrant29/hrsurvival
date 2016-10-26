@@ -1,9 +1,18 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
+  def meta_tag
+    set_meta_tags title: @article.title,
+                  description: @article.body,
+                  keywords: @article.title
+  end
+
   # GET /articles
   # GET /articles.json
   def index
+    set_meta_tags title: "Employment Law Articles",
+                  description: "Human Resource Advice from Wilson Worley Law Firm",
+                  keywords: 'Human Resources, Virginia, Federal, Law, Forms, Policies'
     @email = Email.new
     @articles = Article.friendly.all
     @book = Book.first
@@ -13,6 +22,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    meta_tag
     @email = Email.new
     @article = Article.friendly.find(params[:id])
     @articles = Article.all

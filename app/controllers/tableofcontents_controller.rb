@@ -17,7 +17,6 @@ class TableofcontentsController < ApplicationController
     @book = Book.friendly.find(params[:book_id])
     @chapter = Chapter.friendly.find(params[:chapter_id])
     @tableofcontent = Tableofcontent.friendly.find(params[:id])
-
   end
 
   # GET /tableofcontents/new

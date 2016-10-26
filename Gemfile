@@ -27,6 +27,7 @@ gem "font-awesome-rails"
 gem 'kaminari'
 gem 'social-share-button'
 gem 'friendly_id', '~> 5.1.0'
+gem 'meta-tags'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

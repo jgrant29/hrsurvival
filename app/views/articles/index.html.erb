@@ -1,7 +1,8 @@
-  <div class="container">
-    <% if policy(Article.new).create? %>
-      <br><%= link_to 'New Article', new_article_path %>
-    <% end %>
+<%= display_meta_tags %>
+<div class="container">
+  <% if policy(Article.new).create? %>
+    <br><%= link_to 'New Article', new_article_path %>
+  <% end %>
   <br>
   <br>
   <h1>Blog</h1>
