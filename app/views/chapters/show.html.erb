@@ -35,7 +35,7 @@
                     </a>
                     </h4>
                   </div>
-                  <div id="<%= toc.id %>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div id="<%= toc.id %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                       <% if policy(@chapter).update? %>
                         <%= link_to "Edit TOC", edit_book_chapter_tableofcontent_path(@book, @chapter, toc), class: 'btn btn-primary' %>
