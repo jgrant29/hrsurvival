@@ -1,8 +1,11 @@
 class SearchesController < ApplicationController
   def index
+    
     @tableofcontent_searches = Tableofcontent.search(params[:query], operator: "or", fields: [:body, :title],  page: params[:page], per_page: 12, highlight: {tag: "<strong>"})
     @article_searches = Article.search(params[:query], operator: "or", fields: [:body, :title], page: params[:page], per_page: 12, highlight: {tag: "<strong>"})
     @results = (@tableofcontent_searches && @article_searches)
+    @book = Book.first
+    @chapter = @book.chapters
   end
 
   def autocomplete

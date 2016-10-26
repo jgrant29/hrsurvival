@@ -1,6 +1,6 @@
 <section class="container chapter-show">
   <div class="row">
-    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+    <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- chapter-small -->
       <ins class="adsbygoogle"
@@ -17,9 +17,22 @@
       <% end %>
     </div>
     <section class="container">
-      <div class="col-sx-3 col-sm-9 col-md-9 col-lg-9 chapter-col">
+      <div class="col-sm-9 col-md-9 col-lg-9 chapter-col">
         <div class="media">
           <div class="media-body"> 
+            <div class="col-xs-12 hidden-sm hidden-md hidden-lg text-center">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- chapter-small -->
+              <ins class="adsbygoogle"
+                   style="display:inline-block;width:125px;height:125px"
+                   data-ad-client="ca-pub-2109246747658646"
+                   data-ad-slot="9242484410"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+              <hr>
+            </div>
+            <br>
             <h1><%= @chapter.title %><br> <small>Authored by <%= link_to @book.author, @book.websiteurl %></h1>     
             <% if policy(@chapter).update? %>
               <%= link_to "Edit Chapter", edit_book_chapter_path, class: 'btn btn-primary' %>

@@ -5,14 +5,19 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @email = Email.new
-    @articles = Article.all
+    @articles = Article.friendly.all
+    @book = Book.first
+    @chapter = @book.chapters
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
     @email = Email.new
+    @article = Article.friendly.find(params[:id])
     @articles = Article.all
+    @book = Book.first
+    @chapter = @book.chapters
   end
 
   # GET /articles/new

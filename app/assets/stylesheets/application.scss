@@ -52,13 +52,22 @@ body {
 
 .google-adsense {  
 }
+
 .ui-autocomplete .ui-menu-item .ui-state-focus{
   border-radius: 5px;
   color: black;
   &:hover {
     color: #000;
   };
-  
+}
+
+.navbar-nav .open .dropdown-menu {
+  background-color: #FFFFFF !important;
+}
+
+.navbar-collapse {
+  background-color: #FFFFFF !important;
+  height: 100vh;
 }
 
 .ui-state-focus{
