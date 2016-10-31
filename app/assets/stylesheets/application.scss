@@ -184,10 +184,11 @@ th {
 
 .footer-text {
   padding-bottom: 10px;
-    &:hover {
-      color: #0074D9;
-      cursor: pointer;
-    };
+  color: #FFFFFF !important;
+  &:hover {
+    color: #0074D9 !important;
+    cursor: pointer;
+  }
 }
 
 
