@@ -35,7 +35,7 @@
             </div>
             <br> 
             <h1><%= title @chapter.title %><br> <small>Authored by <%= link_to @book.author, @book.websiteurl %></h1>  
-            <%= image_tag "wilson", {class: "wilson"} %>
+            <%= image_tag "wilson.png", {class: "wilson"} %>
             <% if policy(@chapter).update? %>
               <%= link_to "Edit Chapter", edit_book_chapter_path, class: 'btn btn-primary' %>
               <%= link_to "New TOC", new_book_chapter_tableofcontent_path(@book, @chapter, @tableofcontent), class: 'btn btn-success' %>
